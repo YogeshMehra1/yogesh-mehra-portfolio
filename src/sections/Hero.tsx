@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail, Phone } from 'lucide-react'
 import Button from '../components/Button'
 import BackendNetwork from '../three/BackendNetwork'
 import GlitchText from '../components/GlitchText'
@@ -121,6 +121,13 @@ const Hero = () => {
                 aria-label="Email"
               >
                 <Mail className="w-6 h-6" />
+              </a>
+              <a
+                href="tel:+919675580388"
+                className="p-3 bg-surface border border-surface2 rounded-lg hover:border-primary transition-colors"
+                aria-label="Call +91 9675580388"
+              >
+                <Phone className="w-6 h-6" />
               </a>
             </motion.div>
           </motion.div>
