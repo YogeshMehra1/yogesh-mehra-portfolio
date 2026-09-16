@@ -19,7 +19,7 @@ import Aspirations from './sections/Aspirations'
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-text">
+    <div className="relative z-10 min-h-screen bg-background text-text isolate">
       <ParallaxBackground />
       <ParticleBackground />
       <ScrollProgress />

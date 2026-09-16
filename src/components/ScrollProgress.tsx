@@ -38,12 +38,12 @@ const ScrollProgress = () => {
         style={{ scaleX }}
       />
       
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3">
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3 pointer-events-none">
         {sections.map((section, i) => (
           <button
             key={i}
             onClick={() => scrollToSection(i)}
-            className={`w-2 h-2 rounded-full transition-all ${
+            className={`pointer-events-auto w-2 h-2 rounded-full transition-all ${
               activeSection === i ? 'bg-primary w-3' : 'bg-surface2 hover:bg-primary/50'
             }`}
             aria-label={`Scroll to ${section}`}
@@ -52,7 +52,7 @@ const ScrollProgress = () => {
       </div>
         
         {/* Mobile scroll indicator */}
-        <div className="fixed bottom-6 right-6 z-40 lg:hidden">
+        <div className="fixed bottom-6 right-6 z-40 lg:hidden pointer-events-none">
           <div className="flex items-center gap-2 bg-surface/80 backdrop-blur-sm px-3 py-2 rounded-full border border-surface2">
             <span className="text-xs text-text-secondary">{activeSection + 1}/{sections.length}</span>
           </div>
