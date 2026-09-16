@@ -13,7 +13,6 @@ import Contact from './sections/Contact'
 import CodeEditor from './components/CodeEditor'
 import ParticleBackground from './components/Particles'
 import ScrollProgress from './components/ScrollProgress'
-import MouseTrail from './components/MouseTrail'
 import ThemeToggle from './components/ThemeToggle'
 import ParallaxBackground from './components/ParallaxBackground'
 import SkillBarsSection from './sections/SkillBarsSection'
@@ -24,7 +23,6 @@ function App() {
     <div className="min-h-screen bg-background text-text">
       <ParallaxBackground />
       <ParticleBackground />
-      <MouseTrail />
       <ScrollProgress />
       <ThemeToggle />
       <Hero />

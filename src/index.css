@@ -1,3 +1,31 @@
+:root {
+  --background: #05070b;
+  --surface: #0d1117;
+  --surface-2: #131b22;
+  --primary: #00ff88;
+  --secondary: #00d4ff;
+  --accent: #ff6b35;
+  --text: #f5f7fa;
+  --text-secondary: #9ca3af;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+  color: var(--text);
+}
+
+html.light {
+  --background: #edf4fb;
+  --surface: #ffffff;
+  --surface-2: #e7eef7;
+  --primary: #0d9f6e;
+  --secondary: #0077d9;
+  --accent: #ff7a45;
+  --text: #111827;
+  --text-secondary: #4b5563;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +33,9 @@
 @layer base {
   body {
     @apply bg-background text-text;
+    background: var(--background);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -12,10 +43,6 @@
   .text-balance {
     text-wrap: balance;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {

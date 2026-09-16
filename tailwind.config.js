@@ -7,14 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0a0a0a',
-        surface: '#111111',
-        surface2: '#1a1a1a',
-        primary: '#00ff88',
-        secondary: '#00d4ff',
-        accent: '#ff6b35',
-        text: '#ffffff',
-        'text-secondary': '#a0a0a0',
+        background: 'var(--background)',
+        surface: 'var(--surface)',
+        surface2: 'var(--surface-2)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        accent: 'var(--accent)',
+        text: 'var(--text)',
+        'text-secondary': 'var(--text-secondary)',
       },
       transformStyle: {
         'preserve-3d': 'preserve-3d',

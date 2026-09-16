@@ -2,7 +2,7 @@ import { useRef, useMemo, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-const Particles = ({ count = 100 }: { count?: number }) => {
+const Particles = ({ count = 60 }: { count?: number }) => {
   const meshRef = useRef<THREE.Points>(null)
   
   const positions = useMemo(() => {
@@ -15,8 +15,8 @@ const Particles = ({ count = 100 }: { count?: number }) => {
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y = state.clock.elapsedTime * 0.05
-      meshRef.current.rotation.x = state.clock.elapsedTime * 0.02
+      meshRef.current.rotation.y = state.clock.elapsedTime * 0.025
+      meshRef.current.rotation.x = state.clock.elapsedTime * 0.01
     }
   })
 
@@ -52,7 +52,7 @@ const ParticleBackground = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 hidden md:block">
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        <Particles count={150} />
+        <Particles count={60} />
       </Canvas>
     </div>
   )

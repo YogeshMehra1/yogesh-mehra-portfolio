@@ -74,37 +74,30 @@ const Scene = () => {
   })
 
   const backendNodes = [
-    { position: [-4, 2, 0] as [number, number, number], color: '#00ff88' },
-    { position: [-2, 2, 0] as [number, number, number], color: '#00d4ff' },
-    { position: [0, 2, 0] as [number, number, number], color: '#ff6b35' },
-    { position: [-3, 0, 0] as [number, number, number], color: '#ff00ff' },
-    { position: [-1, 0, 0] as [number, number, number], color: '#00ff00' },
-    { position: [-2, -2, 0] as [number, number, number], color: '#ffaa00' },
+    { position: [-3.6, 1.8, 0] as [number, number, number], color: '#00ff88' },
+    { position: [-1.8, 1.6, 0] as [number, number, number], color: '#00d4ff' },
+    { position: [-0.4, 1.2, 0] as [number, number, number], color: '#ff6b35' },
+    { position: [-2.1, -0.4, 0] as [number, number, number], color: '#ff00ff' },
+    { position: [-3.2, -1.8, 0] as [number, number, number], color: '#00ff00' },
   ]
 
   const fullStackNodes = [
-    { position: [2, 2, 0] as [number, number, number], color: '#61dafb' },
-    { position: [4, 2, 0] as [number, number, number], color: '#3178c6' },
-    { position: [3, 0, 0] as [number, number, number], color: '#f7df1e' },
-    { position: [2, -2, 0] as [number, number, number], color: '#68a063' },
-    { position: [4, -2, 0] as [number, number, number], color: '#339933' },
+    { position: [2.2, 1.7, 0] as [number, number, number], color: '#61dafb' },
+    { position: [3.9, 1.3, 0] as [number, number, number], color: '#3178c6' },
+    { position: [3.3, -0.5, 0] as [number, number, number], color: '#f7df1e' },
+    { position: [2.1, -1.8, 0] as [number, number, number], color: '#68a063' },
   ]
 
   const allNodes = [...backendNodes, ...fullStackNodes]
 
   const connections = [
-    // Backend connections
     { start: backendNodes[0].position, end: backendNodes[1].position },
     { start: backendNodes[1].position, end: backendNodes[2].position },
     { start: backendNodes[1].position, end: backendNodes[3].position },
-    { start: backendNodes[1].position, end: backendNodes[4].position },
-    { start: backendNodes[1].position, end: backendNodes[5].position },
-    // Full stack connections
+    { start: backendNodes[0].position, end: backendNodes[4].position },
     { start: fullStackNodes[0].position, end: fullStackNodes[1].position },
     { start: fullStackNodes[1].position, end: fullStackNodes[2].position },
     { start: fullStackNodes[2].position, end: fullStackNodes[3].position },
-    { start: fullStackNodes[3].position, end: fullStackNodes[4].position },
-    // Cross-layer connections (frontend to backend)
     { start: fullStackNodes[0].position, end: backendNodes[1].position },
   ]
 
