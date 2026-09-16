@@ -1,11 +1,21 @@
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, Phone } from 'lucide-react'
+import { useState } from 'react'
 import Button from '../components/Button'
 import BackendNetwork from '../three/BackendNetwork'
 import GlitchText from '../components/GlitchText'
 import TypingAnimation from '../components/TypingAnimation'
 
 const Hero = () => {
+  const [activeContact, setActiveContact] = useState<string | null>(null)
+
+  const contacts = {
+    github: { label: 'GitHub', value: 'github.com/YogeshMehra1', href: 'https://github.com/YogeshMehra1/' },
+    linkedin: { label: 'LinkedIn', value: 'linkedin.com/in/yogesh-mehra-dev', href: 'https://www.linkedin.com/in/yogesh-mehra-dev/' },
+    email: { label: 'Email', value: 'yogeshmehra.mehra1@gmail.com', href: 'mailto:yogeshmehra.mehra1@gmail.com' },
+    phone: { label: 'Phone', value: '+91 9675580388', href: 'tel:+919675580388' },
+  }
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-surface to-background">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwyNTUsMTM2LDAuMSkiLz48L3N2Zz4=')] opacity-20"></div>
@@ -95,41 +105,55 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4 }}
-              className="flex gap-4"
+              className="flex flex-wrap gap-4"
             >
-              <a
-                href="https://github.com/YogeshMehra1"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => setActiveContact(activeContact === 'github' ? null : 'github')}
                 className="p-3 bg-surface border border-surface2 rounded-lg hover:border-primary transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveContact(activeContact === 'linkedin' ? null : 'linkedin')}
                 className="p-3 bg-surface border border-surface2 rounded-lg hover:border-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="mailto:yogeshmehra.mehra1@gmail.com"
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveContact(activeContact === 'email' ? null : 'email')}
                 className="p-3 bg-surface border border-surface2 rounded-lg hover:border-primary transition-colors"
                 aria-label="Email"
               >
                 <Mail className="w-6 h-6" />
-              </a>
-              <a
-                href="tel:+919675580388"
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveContact(activeContact === 'phone' ? null : 'phone')}
                 className="p-3 bg-surface border border-surface2 rounded-lg hover:border-primary transition-colors"
                 aria-label="Call +91 9675580388"
               >
                 <Phone className="w-6 h-6" />
-              </a>
+              </button>
             </motion.div>
+
+            {activeContact && (
+              <motion.a
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                href={contacts[activeContact as keyof typeof contacts].href}
+                target={activeContact === 'github' || activeContact === 'linkedin' ? '_blank' : undefined}
+                rel={activeContact === 'github' || activeContact === 'linkedin' ? 'noopener noreferrer' : undefined}
+                className="mt-3 inline-flex max-w-full flex-wrap items-center gap-2 rounded-lg border border-primary/40 bg-surface px-4 py-3 text-sm text-primary hover:border-primary"
+              >
+                <span className="text-text-secondary">{contacts[activeContact as keyof typeof contacts].label}:</span>
+                <span className="break-all">{contacts[activeContact as keyof typeof contacts].value}</span>
+              </motion.a>
+            )}
           </motion.div>
           
           <motion.div
