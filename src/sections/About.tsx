@@ -32,7 +32,7 @@ const About = () => {
           I focus primarily on backend engineering and production systems, building scalable solutions that handle real-world traffic.
         </p>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           <MetricCard label="Years Experience" value={3.8} suffix="+" />
           <MetricCard label="Concurrent Users" value={20000} suffix="+" prefix="~" />
           <MetricCard label="API Response Improvement" value={35} suffix="%" prefix="~" />

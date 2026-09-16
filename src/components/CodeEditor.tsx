@@ -126,8 +126,8 @@ const CodeEditor = () => {
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
             <span className="ml-4 text-sm text-text-secondary font-mono">{selectedSnippet.title}</span>
           </div>
-          <pre className="p-6 text-sm md:text-base overflow-x-auto">
-            <code className="font-mono text-primary">
+          <pre className="p-6 text-sm md:text-base overflow-x-auto whitespace-pre-wrap break-words">
+            <code className="font-mono text-primary break-words">
               {selectedSnippet.code}
             </code>
           </pre>

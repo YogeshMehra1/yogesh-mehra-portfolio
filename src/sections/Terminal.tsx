@@ -50,7 +50,7 @@ const Terminal = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="text-text-secondary">{item.cmd}</div>
-                    <div className="text-primary mt-1">{item.output}</div>
+                    <div className="text-primary mt-1 break-words">{item.output}</div>
                   </motion.div>
                 ))}
                 <motion.div
