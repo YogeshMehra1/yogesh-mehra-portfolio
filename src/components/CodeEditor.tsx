@@ -91,7 +91,7 @@ const CodeEditor = () => {
           Real production code from my projects
         </motion.p>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+<div className="relative z-10 flex flex-wrap justify-center gap-4 mb-8">
           {codeSnippets.map((snippet, i) => {
             const isActive = activeSnippet === i
 
@@ -101,7 +101,7 @@ const CodeEditor = () => {
                 type="button"
                 aria-pressed={isActive}
                 onClick={() => setActiveSnippet(i)}
-                className={`px-4 py-2 rounded-lg border transition-all duration-200 ${
+                className={`pointer-events-auto px-4 py-2 rounded-lg border transition-all duration-200 ${
                   isActive
                     ? 'bg-primary/10 border-primary text-primary shadow-[0_0_20px_rgba(0,255,136,0.15)]'
                     : 'bg-background border-surface2 text-text-secondary hover:border-primary/50 hover:text-primary'
@@ -118,7 +118,7 @@ const CodeEditor = () => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
-          className="bg-background border border-surface2 rounded-xl overflow-hidden"
+          className="relative z-10 bg-background border border-surface2 rounded-xl overflow-hidden"
         >
           <div className="bg-surface2 px-4 py-2 flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>

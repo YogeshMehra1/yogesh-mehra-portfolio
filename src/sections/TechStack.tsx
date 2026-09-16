@@ -22,6 +22,10 @@ const techCategories = {
   '03 — DATABASE & CACHE': [
     'PostgreSQL',
     'MySQL',
+    'MongoDB',
+    'Oracle Database',
+    'Microsoft SQL Server',
+    'JDBC',
     'Redis',
     'SQL Optimization',
   ],
