@@ -86,7 +86,7 @@ const Hero = () => {
               <Button variant="primary" size="lg" href="#projects">
                 View Projects
               </Button>
-              <Button variant="secondary" size="lg" href="/resume.pdf" download>
+              <Button variant="secondary" size="lg" href="/yogesh-mehra-resume.pdf" download downloadName="Yogesh-Mehra-Resume.pdf">
                 Download Resume
               </Button>
             </motion.div>

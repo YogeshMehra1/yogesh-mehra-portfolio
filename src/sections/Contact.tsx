@@ -85,7 +85,7 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <Button variant="primary" size="lg" href="/resume.pdf" download>
+          <Button variant="primary" size="lg" href="/yogesh-mehra-resume.pdf" download downloadName="Yogesh-Mehra-Resume.pdf">
             Download Resume
           </Button>
         </motion.div>

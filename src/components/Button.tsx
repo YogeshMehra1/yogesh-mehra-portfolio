@@ -10,9 +10,10 @@ interface ButtonProps {
   href?: string
   external?: boolean
   download?: boolean
+  downloadName?: string
 }
 
-const Button = ({ children, onClick, variant = 'primary', size = 'md', className = '', href, external = false, download = false }: ButtonProps) => {
+const Button = ({ children, onClick, variant = 'primary', size = 'md', className = '', href, external = false, download = false, downloadName }: ButtonProps) => {
   const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 rounded-lg'
   
   const variants = {
@@ -44,7 +45,7 @@ const Button = ({ children, onClick, variant = 'primary', size = 'md', className
         href={href}
         target={external ? '_blank' : undefined}
         rel={external ? 'noopener noreferrer' : undefined}
-        download={download ? true : undefined}
+        download={download ? (downloadName ?? true) : undefined}
         className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
