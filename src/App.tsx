@@ -13,7 +13,6 @@ import Contact from './sections/Contact'
 import CodeEditor from './components/CodeEditor'
 import ParticleBackground from './components/Particles'
 import ScrollProgress from './components/ScrollProgress'
-import ThemeToggle from './components/ThemeToggle'
 import ParallaxBackground from './components/ParallaxBackground'
 import SkillBarsSection from './sections/SkillBarsSection'
 import Aspirations from './sections/Aspirations'
@@ -24,7 +23,6 @@ function App() {
       <ParallaxBackground />
       <ParticleBackground />
       <ScrollProgress />
-      <ThemeToggle />
       <Hero />
       <About />
       <TechStack />
