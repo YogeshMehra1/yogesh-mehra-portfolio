@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, Phone } from 'lucide-react'
 import { useState } from 'react'
 import Button from '../components/Button'
-import BackendNetwork from '../three/BackendNetwork'
 import GlitchText from '../components/GlitchText'
 import TypingAnimation from '../components/TypingAnimation'
 
@@ -62,7 +61,7 @@ const Hero = () => {
               transition={{ delay: 0.8 }}
               className="text-2xl md:text-3xl font-semibold mb-6 text-primary"
             >
-              <TypingAnimation text="Java Backend Engineer building scalable systems and modern web applications." speed={30} />
+              <TypingAnimation text="Java Full Stack Developer building scalable systems and modern web applications." speed={30} />
             </motion.h2>
             
             <motion.p
@@ -71,7 +70,7 @@ const Hero = () => {
               transition={{ delay: 1 }}
               className="text-lg text-text-secondary mb-8 max-w-xl"
             >
-              3.8 years of experience building production-ready backend systems with Java & Spring Boot, distributed microservices, Kafka, Redis and AWS — with hands-on React.js development for modern application interfaces.
+              Results-driven developer with 3.8 years of experience delivering high-performance Java and Spring Boot systems, event-driven microservices, and React.js interfaces.
             </motion.p>
             
             <motion.div
@@ -80,7 +79,7 @@ const Hero = () => {
               transition={{ delay: 1.1 }}
               className="flex flex-wrap gap-2 mb-8"
             >
-              {['Java 17', 'Spring Boot', 'Microservices', 'Kafka', 'Redis', 'AWS', 'Docker', 'React.js', 'TypeScript', 'Node.js'].map((tech, i) => (
+              {['Java 8 / 17', 'Spring Boot', 'Microservices', 'Kafka', 'Redis', 'AWS', 'Docker', 'React.js', 'OpenAI API', 'LLMs'].map((tech, i) => (
                 <span key={i} className="px-3 py-1 bg-surface border border-surface2 rounded-full text-sm text-text-secondary hover:border-primary/50 transition-colors">
                   {tech}
                 </span>
@@ -96,7 +95,7 @@ const Hero = () => {
               <Button variant="primary" size="lg" href="#projects">
                 View Projects
               </Button>
-              <Button variant="secondary" size="lg" href="/yogesh-mehra-resume.pdf" download downloadName="Yogesh-Mehra-Resume.pdf">
+              <Button variant="secondary" size="lg" href="/resume.pdf" download downloadName="Yogesh_Mehra_Resume.pdf">
                 Download Resume
               </Button>
             </motion.div>
@@ -160,14 +159,29 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative h-[400px] md:h-[500px] lg:h-[600px]"
+            className="relative flex min-h-[400px] items-center justify-center md:min-h-[500px] lg:min-h-[600px]"
           >
-            <BackendNetwork className="w-full h-full" />
+            <div className="absolute h-72 w-72 rounded-full bg-primary/20 blur-3xl md:h-96 md:w-96" />
+            <div className="absolute h-[340px] w-[340px] rounded-full border border-primary/20 md:h-[460px] md:w-[460px]" />
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+              className="absolute h-[370px] w-[370px] rounded-full border border-dashed border-secondary/30 md:h-[510px] md:w-[510px]"
+            />
+            <div className="relative rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-1.5 shadow-2xl shadow-primary/30">
+              <div className="rounded-full bg-background p-1.5">
+                <img
+                  src="/yogesh-mehra-profile.png"
+                  alt="Yogesh Mehra, Java Full Stack Developer"
+                  className="h-64 w-64 rounded-full object-cover object-top md:h-80 md:w-80 lg:h-96 lg:w-96"
+                />
+              </div>
+            </div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.6 }}
-              className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-surface/80 backdrop-blur-sm px-4 py-2 rounded-full border border-surface2"
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap flex items-center gap-2 bg-surface/80 backdrop-blur-sm px-4 py-2 rounded-full border border-surface2"
             >
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
               <span className="text-sm font-mono text-primary">FULL STACK ECOSYSTEM</span>

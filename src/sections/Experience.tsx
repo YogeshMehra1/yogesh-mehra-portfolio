@@ -6,21 +6,15 @@ const experiences = [
     year: '2022',
     title: 'Junior Software Developer',
     company: 'Haryana Knowledge Corporation Ltd',
-    period: '11 Jul 2022 – 31 Oct 2025',
-    description: 'Built examination management systems handling 20,000+ concurrent users with PostgreSQL performance tuning.',
+    period: 'Jul 2022 – Oct 2025',
+    description: 'Delivered Java and React.js modules for state examination systems, supporting 20,000+ concurrent users during peak exam windows.',
   },
   {
     year: '2025',
     title: 'Associate Consultant',
     company: 'Infosys Limited',
-    period: '3 Nov 2025 – 13 Mar 2026',
-    description: 'Worked on enterprise-level revenue and invoicing platforms with Java 17, Spring Boot, and Kafka.',
-  },
-  {
-    year: '2026',
-    title: 'Immediate Joiner',
-    company: 'Available for Opportunities',
-    description: 'Ready to take on new challenges in backend and full stack engineering.',
+    period: 'Nov 2025 – Mar 2026',
+    description: 'Built production revenue and invoicing microservices with Java 17, Spring Boot, Kafka, Redis, Docker, and React.js.',
   },
 ]
 

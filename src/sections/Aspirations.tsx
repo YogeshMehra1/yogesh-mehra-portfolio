@@ -4,39 +4,39 @@ import { Brain, Lock, Zap, Target, Code, Sparkles } from 'lucide-react'
 const aspirations = [
   {
     icon: <Brain className="w-6 h-6" />,
-    title: 'AI & LLM Integration',
-    description: 'Exploring Large Language Models and AI integration with backend systems for intelligent applications.',
-    status: 'Learning',
+    title: 'AI-Assisted Development',
+    description: 'Using GitHub Copilot, Cursor IDE, ChatGPT/Claude, OpenAI APIs, and LLMs to improve development workflows and build AI features.',
+    status: 'Applied',
   },
   {
     icon: <Lock className="w-6 h-6" />,
-    title: 'OTP Payment Systems',
-    description: 'Building secure OTP-based payment gateway integrations with fraud detection mechanisms.',
-    status: 'Exploring',
+    title: 'Secure APIs',
+    description: 'Building Spring Security and JWT-based RBAC APIs for protected application workflows.',
+    status: 'Applied',
   },
   {
     icon: <Zap className="w-6 h-6" />,
-    title: 'Advanced Microservices',
-    description: 'Deep dive into event-driven architecture with Kafka, service mesh, and distributed tracing.',
-    status: 'In Progress',
+    title: 'Event-Driven Systems',
+    description: 'Applying Apache Kafka for asynchronous processing and decoupled microservice communication.',
+    status: 'Applied',
   },
   {
     icon: <Target className="w-6 h-6" />,
-    title: 'Cloud Architecture',
-    description: 'Mastering AWS serverless, lambda functions, and container orchestration with Kubernetes.',
-    status: 'Learning',
+    title: 'Cloud & Delivery',
+    description: 'Working with AWS S3 and EC2, Docker, GitHub Actions, Maven, and production deployment practices.',
+    status: 'Applied',
   },
   {
     icon: <Code className="w-6 h-6" />,
-    title: 'Full Stack Mastery',
-    description: 'Advancing React.js skills with Next.js, GraphQL, and modern frontend architectures.',
-    status: 'In Progress',
+    title: 'Full Stack Delivery',
+    description: 'Delivering React.js interfaces alongside Java backend APIs for examination and revenue workflows.',
+    status: 'Applied',
   },
   {
     icon: <Sparkles className="w-6 h-6" />,
-    title: 'System Design',
-    description: 'Designing scalable distributed systems handling millions of requests with high availability.',
-    status: 'Learning',
+    title: 'Observability',
+    description: 'Designing with Grafana, Prometheus, Loki, and production support practices in mind.',
+    status: 'Applied',
   },
 ]
 
@@ -51,7 +51,7 @@ const Aspirations = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold mb-4 text-center"
         >
-          Learning & Aspirations
+          Capabilities & Continuous Learning
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -60,7 +60,7 @@ const Aspirations = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl text-text-secondary text-center mb-16 max-w-2xl mx-auto"
         >
-          Technologies and domains I'm actively exploring and mastering
+          Practical engineering strengths, tools, and areas of ongoing growth
         </motion.p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -81,7 +81,7 @@ const Aspirations = () => {
                   <h3 className="text-xl font-bold mb-1">{item.title}</h3>
                   <span className={`text-xs px-2 py-1 rounded-full ${
                     item.status === 'Learning' ? 'bg-secondary/20 text-secondary' :
-                    item.status === 'In Progress' ? 'bg-primary/20 text-primary' :
+                    item.status === 'Applied' ? 'bg-primary/20 text-primary' :
                     'bg-accent/20 text-accent'
                   }`}>
                     {item.status}
@@ -100,11 +100,10 @@ const Aspirations = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border border-surface2 rounded-xl p-8 text-center"
         >
-          <h3 className="text-2xl font-bold mb-4">Continuous Learning Journey</h3>
+          <h3 className="text-2xl font-bold mb-4">Building with a learning mindset</h3>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Beyond my professional experience, I'm actively exploring cutting-edge technologies 
-            including AI/LLM integration, secure payment systems, and advanced cloud architectures. 
-            My goal is to build intelligent, scalable systems that solve real-world problems.
+            I combine Java, Spring Boot, React.js, and cloud-native tooling with AI-assisted development
+            to build reliable, scalable systems that solve real-world problems.
           </p>
         </motion.div>
       </div>

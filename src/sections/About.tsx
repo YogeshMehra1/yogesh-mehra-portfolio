@@ -52,6 +52,25 @@ const About = () => {
             <span className="text-text-secondary">Production Uptime</span>
           </div>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-6 grid gap-4 md:grid-cols-2"
+        >
+          <div className="rounded-xl border border-surface2 bg-background p-5">
+            <p className="text-sm text-text-secondary">Certification</p>
+            <p className="mt-1 font-semibold text-primary">Oracle Agentic AI Certified Foundations Associate</p>
+            <p className="mt-1 text-sm text-text-secondary">September 2026</p>
+          </div>
+          <div className="rounded-xl border border-surface2 bg-background p-5">
+            <p className="text-sm text-text-secondary">Education</p>
+            <p className="mt-1 font-semibold">B.Tech, Computer Science & Engineering</p>
+            <p className="mt-1 text-sm text-text-secondary">Uttarakhand Technical University · 2016–2020</p>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

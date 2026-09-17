@@ -22,9 +22,6 @@ const techCategories = {
   '03 — DATABASE & CACHE': [
     'PostgreSQL',
     'MySQL',
-    'MongoDB',
-    'Oracle Database',
-    'Microsoft SQL Server',
     'JDBC',
     'Redis',
     'SQL Optimization',
@@ -48,9 +45,12 @@ const techCategories = {
     'CSS3',
     'Bootstrap',
   ],
-  '06 — NODE ECOSYSTEM': [
-    'Node.js',
-    'Express.js',
+  '06 — AI TOOLS & PRODUCTIVITY': [
+    'GitHub Copilot',
+    'Cursor IDE',
+    'ChatGPT / Claude',
+    'OpenAI API',
+    'LLMs',
   ],
   '07 — TESTING': [
     'JUnit 5',

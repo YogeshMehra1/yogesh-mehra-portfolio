@@ -24,15 +24,15 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-6 mb-16"
         >
-          <Button variant="primary" size="lg" href="mailto:contact@example.com">
+          <Button variant="primary" size="lg" href="mailto:yogeshmehra.mehra1@gmail.com">
             <Mail className="w-5 h-5 mr-2" />
             Email Me
           </Button>
-          <Button variant="secondary" size="lg" href="https://github.com/YogeshMehra1/yogesh-mehra-portfolio" external>
+          <Button variant="secondary" size="lg" href="https://github.com/YogeshMehra1/" external>
             <Github className="w-5 h-5 mr-2" />
             GitHub
           </Button>
-          <Button variant="outline" size="lg" href="https://linkedin.com" external>
+          <Button variant="outline" size="lg" href="https://www.linkedin.com/in/yogesh-mehra-dev/" external>
             <Linkedin className="w-5 h-5 mr-2" />
             LinkedIn
           </Button>
@@ -52,7 +52,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-text-secondary text-sm">Location</p>
-                <p className="font-medium">Uttarakhand, India</p>
+                <p className="font-medium">Haldwani, Uttarakhand, India</p>
               </div>
             </div>
             
@@ -61,8 +61,8 @@ const Contact = () => {
                 <Clock className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-text-secondary text-sm">Availability</p>
-                <p className="font-medium text-primary">Immediate Joiner</p>
+                <p className="text-text-secondary text-sm">Focus</p>
+                <p className="font-medium text-primary">Java Full Stack Development</p>
               </div>
             </div>
             
@@ -85,7 +85,7 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <Button variant="primary" size="lg" href="/yogesh-mehra-resume.pdf" download downloadName="Yogesh-Mehra-Resume.pdf">
+          <Button variant="primary" size="lg" href="/resume.pdf" download downloadName="Yogesh_Mehra_Resume.pdf">
             Download Resume
           </Button>
         </motion.div>

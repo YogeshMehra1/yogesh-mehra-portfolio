@@ -7,7 +7,7 @@ const projects = [
     title: 'Revenue & Invoicing Platform',
     company: 'Infosys Limited',
     role: 'Associate Consultant — Java Backend Developer',
-    period: '3 Nov 2025 – 13 Mar 2026',
+    period: 'Nov 2025 – Mar 2026',
     description: 'Built backend microservices for invoice generation using Java 17 and Spring Boot, following REST API best practices across 3+ internal service consumers.',
     architecture: ['REST API', 'Spring Boot Microservice', 'Kafka', 'Redis', 'Invoice Processing', 'AWS / Docker'],
     highlights: [
@@ -24,7 +24,7 @@ const projects = [
     title: 'State Examination Management System',
     company: 'Haryana Knowledge Corporation Ltd',
     role: 'Junior Software Developer',
-    period: 'Jul 2022 – 2026',
+    period: 'Jul 2022 – Oct 2025',
     description: 'Built examination system handling 20,000+ concurrent users with PostgreSQL performance tuning and JPA/Hibernate optimization.',
     architecture: ['React.js', 'REST API', 'Spring Boot', 'PostgreSQL', 'JPA/Hibernate'],
     highlights: [
@@ -40,9 +40,9 @@ const projects = [
   },
   {
     title: 'Citizen Services & Application Processing Portal',
-    company: 'Government Project',
-    role: 'Java Backend Developer',
-    period: '2025',
+    company: 'Haryana Knowledge Corporation Ltd',
+    role: 'Java Full Stack Developer',
+    period: 'Jul 2022 – Oct 2025',
     description: 'Secure document verification system processing 15,000+ citizen applications with JWT-based RBAC and AWS S3 integration.',
     architecture: ['React.js', 'Secure REST API', 'Spring Security', 'JWT', 'RBAC', 'Application Processing', 'AWS S3'],
     highlights: [
@@ -55,6 +55,48 @@ const projects = [
       'Postman API testing - ~20% integration handoff improvement',
     ],
     icon: <Cloud className="w-6 h-6" />,
+  },
+  {
+    title: 'Food Delivery Platform',
+    company: 'Personal Project',
+    role: 'Java Full Stack Developer',
+    description: 'Enterprise-grade food delivery platform with Spring Boot microservices, real-time order tracking, secure payments, and event-driven workflows.',
+    architecture: ['Spring Boot', 'Microservices', 'Kafka', 'Redis', 'WebSocket', 'Secure Payments'],
+    highlights: [
+      'Real-time order tracking with WebSocket support',
+      'Kafka-based event streaming for order workflows',
+      'Redis caching for responsive platform experiences',
+      'Secure payment flow integration',
+    ],
+    icon: <Server className="w-6 h-6" />,
+  },
+  {
+    title: 'Resume Analyzer AI',
+    company: 'Personal Project',
+    role: 'AI Application Developer',
+    description: 'AI-powered resume analysis app that extracts resume text and returns practical ATS feedback for candidates.',
+    architecture: ['Spring Boot', 'Spring AI', 'Google Gemini', 'Apache Tika', 'Thymeleaf'],
+    highlights: [
+      'Extracts resume text with Apache Tika',
+      'Generates ATS score, strengths, weaknesses, and keyword gaps',
+      'Provides actionable improvement suggestions',
+      'Integrates Spring AI with Google Gemini',
+    ],
+    icon: <Cloud className="w-6 h-6" />,
+  },
+  {
+    title: 'Salon Booking Microservices Platform',
+    company: 'Personal Project',
+    role: 'Java Backend Developer',
+    description: 'Production-style salon booking platform designed as independently deployable services with security, caching, event publishing, and observability.',
+    architecture: ['API Gateway', 'JWT', 'Kafka', 'Redis', 'PostgreSQL', 'Docker Compose'],
+    highlights: [
+      'Auth, salon, booking, and notification services',
+      'Kafka event publishing and Redis caching',
+      'Flyway-managed PostgreSQL schema migrations',
+      'Grafana, Prometheus, and Loki observability stack',
+    ],
+    icon: <Database className="w-6 h-6" />,
   },
 ]
 
@@ -69,7 +111,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold mb-4 text-center"
         >
-          Production Systems
+          Selected Work
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -78,7 +120,7 @@ const Projects = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl text-text-secondary text-center mb-16 max-w-2xl mx-auto"
         >
-          Real-world backend systems built for scale and reliability
+          Production experience and personal projects built for scale, reliability, and real-world use
         </motion.p>
 
         <div className="space-y-16">
