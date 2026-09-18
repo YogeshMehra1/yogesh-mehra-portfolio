@@ -13,16 +13,21 @@ import Contact from './sections/Contact'
 import CodeEditor from './components/CodeEditor'
 import ParticleBackground from './components/Particles'
 import ScrollProgress from './components/ScrollProgress'
+import MouseTrail from './components/MouseTrail'
+import ThemeToggle from './components/ThemeToggle'
 import ParallaxBackground from './components/ParallaxBackground'
 import SkillBarsSection from './sections/SkillBarsSection'
 import Aspirations from './sections/Aspirations'
+import ChatBot from './components/ChatBot'
 
 function App() {
   return (
-    <div className="relative z-10 min-h-screen bg-background text-text isolate">
+    <div className="min-h-screen bg-background text-text">
       <ParallaxBackground />
       <ParticleBackground />
+      <MouseTrail />
       <ScrollProgress />
+      <ThemeToggle />
       <Hero />
       <About />
       <TechStack />
@@ -38,6 +43,7 @@ function App() {
       <Aspirations />
       <Security />
       <Contact />
+      <ChatBot />
     </div>
   )
 }
