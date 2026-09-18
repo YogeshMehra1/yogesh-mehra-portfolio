@@ -27,66 +27,86 @@ const getResponse = (userMessage: string): string => {
 
   // Greetings
   if (message.match(/^(hi|hello|hey|namaste|kaise ho)/)) {
-    return `Hello! I'm Yogesh's portfolio assistant. Ask me anything about his skills, experience, or projects! 👋`
+    return `Hello! 👋 I'm Yogesh's portfolio assistant. I can help you with:\n• His technical skills & expertise\n• Work experience & projects\n• Contact information\n• Career opportunities\n\nWhat would you like to know?`
   }
 
   // Name
   if (message.match(/(name|kaun|who|kya naam)/)) {
-    return `My name is ${portfolioData.name}. I'm a ${portfolioData.role}.`
+    return `I'm ${portfolioData.name}, a passionate ${portfolioData.role} with ${portfolioData.experience} of hands-on experience building scalable backend systems and modern web applications.`
   }
 
   // Experience
   if (message.match(/(experience|exp|kitne saal|kitna time|work)/)) {
-    return `I have ${portfolioData.experience} of experience. Worked at ${portfolioData.companies.join(' and ')}.`
+    return `I have ${portfolioData.experience} of professional experience:\n\n🏢 **Haryana Knowledge Corporation Ltd** (3+ years)\n• Built examination systems handling 20,000+ concurrent users\n• PostgreSQL performance tuning & JPA optimization\n• 99.5% uptime maintained\n\n🏢 **Infosys Limited** (4 months)\n• Revenue & invoicing platform microservices\n• Kafka async payment notifications\n• Redis caching for 35% faster response times`
   }
 
   // Skills
   if (message.match(/(skill|tech|technology|technology|kya aata hai|technologies)/)) {
-    return `My core skills: ${portfolioData.skills.slice(0, 5).join(', ')}. Also experienced with ${portfolioData.skills.slice(5).join(', ')}.`
+    return `**Backend Skills:**\n• Java 8/17, Spring Boot, Microservices\n• Kafka, Redis, PostgreSQL, JPA/Hibernate\n• AWS, Docker, REST APIs\n\n**Frontend Skills:**\n• React.js, TypeScript, Node.js\n• Express.js, Modern UI frameworks\n\n**Testing & Tools:**\n• JUnit 5, Mockito, Postman\n• Git, Docker, CI/CD\n\nI specialize in building scalable distributed systems with event-driven architecture.`
   }
 
   // Projects
   if (message.match(/(project|work|kya kaam|kya banaya|portfolio)/)) {
-    return `Key projects:\n• ${portfolioData.projects[0]}\n• ${portfolioData.projects[1]}\n• ${portfolioData.projects[2]}`
+    return `**Key Projects:**\n\n1️⃣ **Revenue & Invoicing Platform** (Infosys)\n• Java 17 + Spring Boot microservices\n• Kafka async notifications (30% latency reduction)\n• Redis caching (35% faster response)\n• Docker deployment\n\n2️⃣ **State Examination System** (HKCL)\n• 20,000+ concurrent users\n• PostgreSQL performance tuning\n• 40% query-time reduction\n• React.js frontend\n\n3️⃣ **Citizen Services Portal** (Government)\n• 15,000+ applications processed\n• JWT-based RBAC security\n• AWS S3 document storage\n• Swagger API documentation`
   }
 
   // Companies
   if (message.match(/(company|organization|kahan kaam kiya|where|job)/)) {
-    return `Worked at:\n• ${portfolioData.companies[0]} (11 Jul 2022 – 31 Oct 2025)\n• ${portfolioData.companies[1]} (3 Nov 2025 – 13 Mar 2026)`
+    return `**Professional Journey:**\n\n📅 **Haryana Knowledge Corporation Ltd**\n• Role: Junior Software Developer\n• Period: 11 Jul 2022 – 31 Oct 2025\n• Focus: Examination management systems\n\n📅 **Infosys Limited**\n• Role: Associate Consultant\n• Period: 3 Nov 2025 – 13 Mar 2026\n• Focus: Enterprise revenue platforms\n\n📅 **Current Status**\n• Immediate Joiner - Ready for new opportunities!`
   }
 
   // Contact
   if (message.match(/(contact|email|phone|number|call|message|sambandh)/)) {
-    return `Contact me:\n📧 ${portfolioData.email}\n📱 ${portfolioData.phone}\n💼 ${portfolioData.github}\n🔗 ${portfolioData.linkedin}`
+    return `Let's connect! 🤝\n\n📧 **Email:** ${portfolioData.email}\n📱 **Phone:** ${portfolioData.phone}\n💼 **GitHub:** ${portfolioData.github}\n🔗 **LinkedIn:** ${portfolioData.linkedin}\n📍 **Location:** ${portfolioData.location}\n\nFeel free to reach out for opportunities or collaborations!`
   }
 
   // Location
   if (message.match(/(location|where|kahan|kahan rehte ho|place)/)) {
-    return `I'm based in ${portfolioData.location}.`
+    return `I'm based in ${portfolioData.location}, India. I'm open to both remote and on-site opportunities across India.`
   }
 
   // Availability
   if (message.match(/(available|join|job|work|hire|kab join kar sakte)/)) {
-    return `I'm ${portfolioData.availability}! Ready to take on new challenges in backend and full stack engineering.`
+    return `I'm an **Immediate Joiner**! 🚀\n\nCurrently available and actively looking for:\n• Backend Developer roles\n• Full Stack Developer positions\n• Java/Spring Boot opportunities\n• Microservices architecture projects\n\nReady to contribute from Day 1!`
   }
 
   // Education
   if (message.match(/(education|degree|study|padhai|college)/)) {
-    return `I have a ${portfolioData.education}.`
+    return `I hold a ${portfolioData.education}. My technical expertise comes from hands-on experience building production systems, continuous learning, and working on real-world enterprise projects.`
   }
 
   // GitHub
   if (message.match(/(github|code|repository|repo)/)) {
-    return `Check my GitHub: ${portfolioData.github}`
+    return `Check out my GitHub: ${portfolioData.github}\n\nI share my projects, contribute to open source, and continuously update my portfolio with new learnings and experiments.`
   }
 
   // Resume
   if (message.match(/(resume|cv|download)/)) {
-    return `You can download my resume from the Contact section or click the Download Resume button!`
+    return `You can download my resume from the Contact section on this website. It includes detailed information about my experience, skills, projects, and achievements.`
+  }
+
+  // Salary/CTC
+  if (message.match(/(salary|ctc|package|pay|income|kitna milega)/)) {
+    return `I'm open to discussing salary expectations based on the role, responsibilities, and company standards. Let's connect to discuss opportunities!`
+  }
+
+  // Why hire
+  if (message.match(/(why hire|why select|kyun hire|benefit)/)) {
+    return `**Why hire me?**\n\n✅ **3.8 years** of hands-on production experience\n✅ Built systems handling **20,000+ concurrent users**\n✅ **30-40% performance improvements** in projects\n✅ **Full stack** capability (Java + React)\n✅ **Immediate joiner** - no notice period\n✅ Strong problem-solving & system design skills\n\nI bring both technical expertise and practical experience to deliver results from Day 1!`
+  }
+
+  // Career goals
+  if (message.match(/(career|goal|future|plan|kya chahte ho)/)) {
+    return `**Career Goals:**\n\n• Master distributed systems architecture\n• Deep dive into AI/LLM integration with backend\n• Build scalable microservices at scale\n• Lead technical teams and mentor developers\n• Contribute to open-source projects\n\nI'm passionate about building systems that solve real-world problems and continuously learning new technologies.`
+  }
+
+  // Strengths
+  if (message.match(/(strength|strong point|quality|best)/)) {
+    return `**My Strengths:**\n\n💪 **Backend Architecture** - Scalable microservices\n💪 **Performance Optimization** - 30-40% improvements\n💪 **Problem Solving** - Production RCA & debugging\n💪 **Full Stack** - Java to React end-to-end\n💪 **Quick Learner** - Always exploring new tech\n💪 **Team Player** - Collaborative approach`
   }
 
   // Default response
-  return `I can help you with information about my skills, experience, projects, or contact details. Try asking about "experience", "skills", "projects", or "contact".`
+  return `I can help you with detailed information about:\n\n📌 **Experience** - Work history & companies\n📌 **Skills** - Technical expertise\n📌 **Projects** - Key achievements\n📌 **Contact** - How to reach me\n📌 **Career** - Goals & opportunities\n\nTry asking about any of these topics!`
 }
 
 const ChatBot = () => {
