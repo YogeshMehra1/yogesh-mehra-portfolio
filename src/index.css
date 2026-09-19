@@ -127,6 +127,27 @@
     .text-responsive {
       font-size: clamp(1rem, 4vw, 1.25rem);
     }
+
+    /* Mobile-specific adjustments */
+    h1 {
+      font-size: clamp(2rem, 8vw, 3rem) !important;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 6vw, 2rem) !important;
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 5vw, 1.5rem) !important;
+    }
+  }
+
+  /* Touch-friendly tap targets */
+  @media (max-width: 768px) {
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
   }
 }
 

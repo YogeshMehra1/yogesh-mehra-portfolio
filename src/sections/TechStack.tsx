@@ -55,15 +55,15 @@ const TechStack = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Technology Ecosystem</h2>
-          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 gradient-text">Technology Ecosystem</h2>
+          <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto">
             Core technologies I use to build scalable, production-ready systems
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {Object.entries(techCategories).map(([category, techs], categoryIndex) => (
             <motion.div
               key={category}
@@ -73,7 +73,7 @@ const TechStack = () => {
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               onMouseEnter={() => setActiveCategory(category)}
               onMouseLeave={() => setActiveCategory(null)}
-              className={`glass rounded-2xl p-6 card-hover cursor-pointer ${
+              className={`glass rounded-2xl p-4 md:p-6 card-hover cursor-pointer ${
                 activeCategory === category ? 'border-primary/50' : ''
               }`}
             >

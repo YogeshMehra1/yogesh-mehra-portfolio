@@ -15,9 +15,9 @@ const Hero = () => {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-12 md:py-0">
+      <div className="container mx-auto px-4 md:px-12 lg:px-24 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -38,7 +38,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 gradient-text"
+              className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold mb-6 gradient-text"
             >
               YOGESH MEHRA
             </motion.h1>
@@ -50,10 +50,10 @@ const Hero = () => {
               className="mb-8"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-px w-12 bg-gradient-to-r from-primary to-transparent" />
-                <span className="text-2xl md:text-3xl font-semibold text-primary">3.8 Years Experience</span>
+                <div className="h-px w-8 md:w-12 bg-gradient-to-r from-primary to-transparent" />
+                <span className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary">3.8 Years Experience</span>
               </div>
-              <h2 className="text-xl md:text-2xl text-text-secondary leading-relaxed">
+              <h2 className="text-lg md:text-xl lg:text-2xl text-text-secondary leading-relaxed">
                 Java Full Stack Developer building scalable systems and modern web applications
               </h2>
             </motion.div>
@@ -62,7 +62,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="text-lg text-text-secondary mb-10 max-w-xl leading-relaxed"
+              className="text-base md:text-lg text-text-secondary mb-8 md:mb-10 max-w-xl leading-relaxed"
             >
               Results-driven developer with 3.8 years of experience delivering high-performance Java and Spring Boot systems, event-driven microservices, and React.js interfaces.
             </motion.p>
@@ -160,7 +160,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative flex items-center justify-center min-h-[500px] md:min-h-[600px]"
+            className="relative flex items-center justify-center min-h-[350px] md:min-h-[500px] lg:min-h-[600px] order-first lg:order-last"
           >
             <PremiumPhotoReveal />
           </motion.div>

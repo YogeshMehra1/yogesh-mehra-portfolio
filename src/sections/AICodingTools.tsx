@@ -120,7 +120,7 @@ const AICodingTools = () => {
         </motion.div>
 
         {/* Tool Categories with enhanced animations */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-12 md:mb-16">
           {['ai', 'ide', 'productivity'].map((category, catIndex) => (
             <motion.div
               key={category}
@@ -240,7 +240,7 @@ const AICodingTools = () => {
               style={{ backgroundSize: '200% 200%' }}
             />
 
-            <div className="relative z-10 grid lg:grid-cols-2 gap-12">
+            <div className="relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
