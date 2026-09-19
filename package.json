@@ -9,13 +9,15 @@
     "preview": "node ./node_modules/vite/bin/vite.js preview"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "@react-three/drei": "^9.105.0",
+    "@react-three/fiber": "^8.16.0",
+    "@reduxjs/toolkit": "^2.12.0",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.344.0",
-    "three": "^0.163.0",
-    "@react-three/fiber": "^8.16.0",
-    "@react-three/drei": "^9.105.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.3.0",
+    "three": "^0.163.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.0",

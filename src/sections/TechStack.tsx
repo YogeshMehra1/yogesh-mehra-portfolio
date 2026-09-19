@@ -1,94 +1,69 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import SkillOrbs from '../components/SkillOrbs'
+import { Code, Cloud, Database, Server, Cpu, Shield, Rocket } from 'lucide-react'
 
 const techCategories = {
   '01 — BACKEND': [
-    'Java 8 / Java 17',
+    'Java 17',
     'Spring Boot',
-    'Spring MVC',
-    'Spring Data JPA',
     'Spring Security',
-    'Hibernate',
+    'Microservices',
     'REST APIs',
   ],
-  '02 — MICROSERVICES': [
-    'Microservices',
-    'Apache Kafka',
-    'Multithreading',
-    'Design Patterns',
-    'SOLID Principles',
-  ],
-  '03 — DATABASE & CACHE': [
+  '02 — DATA & CACHING': [
     'PostgreSQL',
     'MySQL',
-    'JDBC',
     'Redis',
-    'SQL Optimization',
+  ],
+  '03 — MESSAGING & EVENTS': [
+    'Apache Kafka',
   ],
   '04 — CLOUD & DEVOPS': [
     'AWS',
-    'S3',
-    'EC2',
     'Docker',
+    'Kubernetes',
     'Git',
-    'GitHub Actions',
-    'Maven',
-    'Swagger/OpenAPI',
-    'Postman',
+    'CI/CD',
   ],
   '05 — FRONTEND': [
     'React.js',
     'TypeScript',
-    'JavaScript',
-    'HTML5',
-    'CSS3',
-    'Bootstrap',
   ],
-  '06 — AI TOOLS & PRODUCTIVITY': [
-    'GitHub Copilot',
-    'Cursor IDE',
-    'ChatGPT / Claude',
-    'OpenAI API',
-    'LLMs',
+  '06 — AI & PRODUCTIVITY': [
+    'GenAI',
   ],
-  '07 — TESTING': [
-    'JUnit 5',
-    'Mockito',
-    'Production Support',
-    'RCA',
-    'Agile Scrum',
-  ],
+}
+
+const categoryIcons: Record<string, any> = {
+  '01 — BACKEND': <Server className="w-6 h-6" />,
+  '02 — DATA & CACHING': <Database className="w-6 h-6" />,
+  '03 — MESSAGING & EVENTS': <Rocket className="w-6 h-6" />,
+  '04 — CLOUD & DEVOPS': <Cloud className="w-6 h-6" />,
+  '05 — FRONTEND': <Code className="w-6 h-6" />,
+  '06 — AI & PRODUCTIVITY': <Cpu className="w-6 h-6" />,
 }
 
 const TechStack = () => {
   const [hoveredTech, setHoveredTech] = useState<string | null>(null)
-
-  const javaConnections = [
-    'Spring Boot',
-    'REST APIs',
-    'Microservices',
-    'Apache Kafka',
-    'PostgreSQL',
-    'Redis',
-    'AWS',
-    'React.js',
-  ]
+  const [activeCategory, setActiveCategory] = useState<string | null>(null)
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-background">
+    <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
       <div className="container mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-16 text-center"
+          className="text-center mb-16"
         >
-          Technology Ecosystem
-        </motion.h2>
-        
-        <div className="space-y-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Technology Ecosystem</h2>
+          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+            Core technologies I use to build scalable, production-ready systems
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Object.entries(techCategories).map(([category, techs], categoryIndex) => (
             <motion.div
               key={category}
@@ -96,67 +71,59 @@ const TechStack = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+              onMouseEnter={() => setActiveCategory(category)}
+              onMouseLeave={() => setActiveCategory(null)}
+              className={`glass rounded-2xl p-6 card-hover cursor-pointer ${
+                activeCategory === category ? 'border-primary/50' : ''
+              }`}
             >
-              <h3 className="text-xl font-bold text-primary mb-4 font-mono">{category}</h3>
-              <div className="flex flex-wrap gap-3">
-                {techs.map((tech, techIndex) => {
-                  const isConnected = hoveredTech === 'Java 8 / Java 17' && javaConnections.includes(tech)
-                  const isJava = tech === 'Java 8 / Java 17'
-                  const isReact = tech === 'React.js'
-                  
-                  return (
-                    <motion.div
-                      key={tech}
-                      onMouseEnter={() => setHoveredTech(tech)}
-                      onMouseLeave={() => setHoveredTech(null)}
-                      className={`px-4 py-2 rounded-lg border transition-all cursor-default ${
-                        isConnected
-                          ? 'bg-primary/20 border-primary text-primary'
-                          : isJava && hoveredTech
-                          ? 'bg-primary/10 border-primary text-primary'
-                          : isReact && hoveredTech
-                          ? 'bg-secondary/10 border-secondary text-secondary'
-                          : 'bg-surface border-surface2 hover:border-primary/50'
-                      }`}
-                      whileHover={{ scale: 1.05 }}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: techIndex * 0.05 }}
-                    >
-                      {tech}
-                    </motion.div>
-                  )
-                })}
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`p-3 rounded-xl ${
+                  activeCategory === category ? 'bg-primary/20 text-primary' : 'bg-surface2 text-text-secondary'
+                }`}>
+                  {categoryIcons[category]}
+                </div>
+                <h3 className="text-lg font-bold font-mono">{category}</h3>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {techs.map((tech, techIndex) => (
+                  <motion.span
+                    key={tech}
+                    onMouseEnter={() => setHoveredTech(tech)}
+                    onMouseLeave={() => setHoveredTech(null)}
+                    className={`px-3 py-2 rounded-lg text-sm transition-all ${
+                      hoveredTech === tech
+                        ? 'bg-primary/20 text-primary border-primary/50'
+                        : 'bg-surface2 text-text-secondary hover:border-primary/30'
+                    } border border-transparent`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: techIndex * 0.03 }}
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
               </div>
             </motion.div>
           ))}
         </div>
-        
-        {(hoveredTech === 'Java 8 / Java 17' || hoveredTech === 'React.js') && (
+
+        {hoveredTech && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-8 p-4 bg-surface border border-primary/30 rounded-lg text-center"
+            exit={{ opacity: 0, y: -20 }}
+            className="mt-12 max-w-2xl mx-auto glass rounded-xl p-6 text-center"
           >
-            <p className="text-text-secondary">
-              {hoveredTech === 'Java 8 / Java 17' 
-                ? 'Hover over Java to see connected technologies in the ecosystem'
-                : 'React.js connects to REST APIs and modern frontend development'
-              }
+            <p className="text-primary font-medium mb-2">{hoveredTech}</p>
+            <p className="text-text-secondary text-sm">
+              Core technology in my full-stack development toolkit
             </p>
           </motion.div>
         )}
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-16 hidden md:block"
-        >
-          <h3 className="text-2xl font-bold mb-6 text-center">3D Skills Visualization</h3>
-          <SkillOrbs />
-        </motion.div>
       </div>
     </section>
   )

@@ -6,11 +6,11 @@ const MetricCard = ({ icon: Icon, label, value, suffix, color }: { icon: any; la
   const { count, ref } = useCounter({ end: value, duration: 2000, suffix: '', prefix: '' })
 
   return (
-    <div ref={ref} className="bg-surface border border-surface2 rounded-xl p-6 hover:border-primary/30 transition-all">
+    <div ref={ref} className="glass rounded-xl p-6 card-hover">
       <div className={`p-3 rounded-lg ${color} mb-4 inline-block`}>
         <Icon className="w-6 h-6" />
       </div>
-      <div className="text-3xl font-bold text-white mb-2">
+      <div className="text-3xl font-bold gradient-text mb-2">
         {count}{suffix}
       </div>
       <div className="text-text-secondary">{label}</div>
@@ -29,7 +29,7 @@ const Production = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Inside Production</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Inside Production</h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
             Real metrics from production systems
           </p>
@@ -47,10 +47,10 @@ const Production = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-surface border border-surface2 rounded-2xl p-8"
+          className="glass rounded-2xl p-8"
         >
-          <h3 className="text-2xl font-bold mb-8 text-center">Incident Response Simulation</h3>
-          
+          <h3 className="text-2xl font-bold mb-8 text-center gradient-text">Incident Response Simulation</h3>
+
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             {[
               { icon: AlertTriangle, label: 'Request Spike Detected', color: 'bg-red-500/20 text-red-500' },

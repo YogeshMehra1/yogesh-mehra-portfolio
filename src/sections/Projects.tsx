@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Database, Server, Cloud, Zap } from 'lucide-react'
-import TiltCard from '../components/TiltCard'
+import { ArrowRight, Database, Server, Cloud, Zap, ExternalLink, Calendar } from 'lucide-react'
 
 const projects = [
   {
@@ -102,78 +101,119 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
+    <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 bg-background">
       <div className="container mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-center"
+          className="text-center mb-16"
         >
-          Selected Work
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-text-secondary text-center mb-16 max-w-2xl mx-auto"
-        >
-          Production experience and personal projects built for scale, reliability, and real-world use
-        </motion.p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Selected Work</h2>
+          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+            Production experience and personal projects built for scale, reliability, and real-world use
+          </p>
+        </motion.div>
 
-        <div className="space-y-16">
+        <div className="space-y-12">
           {projects.map((project, index) => (
-            <TiltCard
+            <motion.div
               key={index}
-              className="bg-background border border-surface2 rounded-2xl p-8 hover:border-primary/30 transition-colors"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="glass rounded-2xl p-8 card-hover"
             >
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="p-4 bg-primary/10 rounded-xl text-primary">
-                    {project.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-primary font-mono mb-1">{project.company}</p>
-                    <p className="text-text-secondary mb-2">{project.role}</p>
-                    <p className="text-text-secondary text-sm">{project.period}</p>
-                  </div>
+              <div className="flex flex-col lg:flex-row gap-8">
+                {/* Left side - Icon and main info */}
+                <div className="lg:w-1/3">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.15 + 0.1 }}
+                    className="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl mb-6"
+                  >
+                    <div className="text-primary mb-4">
+                      {project.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                    <div className="space-y-2">
+                      <p className="text-primary font-mono text-sm">{project.company}</p>
+                      <p className="text-text-secondary text-sm">{project.role}</p>
+                      {project.period && (
+                        <div className="flex items-center gap-2 text-text-muted text-sm">
+                          <Calendar className="w-4 h-4" />
+                          {project.period}
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
                 </div>
 
-                <p className="text-lg text-text-secondary mb-8">{project.description}</p>
+                {/* Right side - Details */}
+                <div className="lg:w-2/3">
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.15 + 0.2 }}
+                    className="text-lg text-text-secondary mb-8 leading-relaxed"
+                  >
+                    {project.description}
+                  </motion.p>
 
-                <div className="mb-8">
-                  <h4 className="text-sm font-mono text-primary mb-4">ARCHITECTURE FLOW</h4>
-                  <div className="flex flex-wrap items-center gap-2 text-sm">
-                    {project.architecture.map((item, i) => (
-                      <div key={i} className="flex items-center gap-2">
-                        <span className="px-3 py-1 bg-surface border border-surface2 rounded-lg">{item}</span>
-                        {i < project.architecture.length - 1 && <ArrowRight className="w-4 h-4 text-text-secondary" />}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.15 + 0.3 }}
+                    className="mb-8"
+                  >
+                    <h4 className="text-sm font-mono text-primary mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 bg-primary rounded-full" />
+                      ARCHITECTURE
+                    </h4>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {project.architecture.map((item, i) => (
+                        <div key={i} className="flex items-center gap-2">
+                          <span className="px-3 py-1.5 bg-surface2 border border-surface3 rounded-lg text-sm text-text-secondary hover:border-primary/50 transition-colors">
+                            {item}
+                          </span>
+                          {i < project.architecture.length - 1 && (
+                            <ArrowRight className="w-4 h-4 text-text-muted" />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
 
-                <div>
-                  <h4 className="text-sm font-mono text-primary mb-4">KEY ACHIEVEMENTS</h4>
-                  <ul className="space-y-2">
-                    {project.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-3 text-text-secondary">
-                        <Zap className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.15 + 0.4 }}
+                  >
+                    <h4 className="text-sm font-mono text-primary mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 bg-primary rounded-full" />
+                      KEY ACHIEVEMENTS
+                    </h4>
+                    <ul className="space-y-3">
+                      {project.highlights.map((highlight, i) => (
+                        <li key={i} className="flex items-start gap-3 text-text-secondary">
+                          <div className="p-1.5 bg-primary/10 rounded-lg mt-0.5">
+                            <Zap className="w-4 h-4 text-primary" />
+                          </div>
+                          <span className="leading-relaxed">{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
                 </div>
-              </motion.div>
-            </TiltCard>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -72,24 +72,24 @@ const CodeEditor = () => {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
       <div className="container mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-center"
+          className="text-center mb-16"
         >
-          Code Examples
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="text-xl text-text-secondary text-center mb-16 max-w-2xl mx-auto"
-        >
-          Real production code from my projects
-        </motion.p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Code Examples</h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="text-xl text-text-secondary max-w-2xl mx-auto"
+          >
+            Real production code from my projects
+          </motion.p>
+        </motion.div>
 
 <div className="relative z-10 flex flex-wrap justify-center gap-4 mb-8">
           {codeSnippets.map((snippet, i) => {
@@ -103,8 +103,8 @@ const CodeEditor = () => {
                 onClick={() => setActiveSnippet(i)}
                 className={`pointer-events-auto px-4 py-2 rounded-lg border transition-all duration-200 ${
                   isActive
-                    ? 'bg-primary/10 border-primary text-primary shadow-[0_0_20px_rgba(0,255,136,0.15)]'
-                    : 'bg-background border-surface2 text-text-secondary hover:border-primary/50 hover:text-primary'
+                    ? 'glass border-primary text-primary'
+                    : 'glass text-text-secondary hover:border-primary/50 hover:text-primary'
                 }`}
               >
                 {snippet.language}
@@ -118,9 +118,9 @@ const CodeEditor = () => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
-          className="relative z-10 bg-background border border-surface2 rounded-xl overflow-hidden"
+          className="relative z-10 glass rounded-xl overflow-hidden card-hover"
         >
-          <div className="bg-surface2 px-4 py-2 flex items-center gap-2">
+          <div className="bg-surface2 px-4 py-2 flex items-center gap-2 border-b border-surface3">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div className="w-3 h-3 rounded-full bg-green-500"></div>

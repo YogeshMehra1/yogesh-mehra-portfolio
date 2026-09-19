@@ -11,26 +11,22 @@ import Experience from './sections/Experience'
 import Security from './sections/Security'
 import Contact from './sections/Contact'
 import CodeEditor from './components/CodeEditor'
-import ParticleBackground from './components/Particles'
 import ScrollProgress from './components/ScrollProgress'
-import MouseTrail from './components/MouseTrail'
-import ThemeToggle from './components/ThemeToggle'
-import ParallaxBackground from './components/ParallaxBackground'
+import PremiumBackground from './components/PremiumBackground'
 import SkillBarsSection from './sections/SkillBarsSection'
 import Aspirations from './sections/Aspirations'
 import ChatBot from './components/ChatBot'
+import AICodingTools from './sections/AICodingTools'
 
 function App() {
   return (
     <div className="min-h-screen bg-background text-text">
-      <ParallaxBackground />
-      <ParticleBackground />
-      <MouseTrail />
+      <PremiumBackground />
       <ScrollProgress />
-      <ThemeToggle />
       <Hero />
       <About />
       <TechStack />
+      <AICodingTools />
       <CodeEditor />
       <SkillBarsSection />
       <FullStackFlow />

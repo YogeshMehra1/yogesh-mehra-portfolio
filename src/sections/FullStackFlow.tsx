@@ -20,24 +20,24 @@ const FullStackFlow = () => {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
       <div className="container mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-center"
+          className="text-center mb-16"
         >
-          From Browser to Database
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-text-secondary text-center mb-16 max-w-2xl mx-auto"
-        >
-          Click on any layer to understand its role in the full stack architecture
-        </motion.p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">From Browser to Database</h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-text-secondary max-w-2xl mx-auto"
+          >
+            Click on any layer to understand its role in the full stack architecture
+          </motion.p>
+        </motion.div>
 
         <div className="flex flex-col items-center gap-4 mb-16">
           {flowLayers.map((layer, i) => (
@@ -48,10 +48,10 @@ const FullStackFlow = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 onClick={() => setSelectedLayer(selectedLayer === layer.id ? null : layer.id)}
-                className={`flex-1 p-4 rounded-xl border cursor-pointer transition-all ${
+                className={`flex-1 p-4 rounded-xl border cursor-pointer transition-all card-hover ${
                   selectedLayer === layer.id
-                    ? 'bg-primary/20 border-primary'
-                    : 'bg-background border-surface2 hover:border-primary/50'
+                    ? 'glass border-primary/50'
+                    : 'glass hover:border-primary/30'
                 }`}
               >
                 <div className="font-semibold text-lg">{layer.label}</div>
@@ -67,7 +67,7 @@ const FullStackFlow = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-2xl mx-auto bg-background border border-surface2 rounded-xl p-6"
+            className="max-w-2xl mx-auto glass rounded-xl p-6"
           >
             <h3 className="text-xl font-bold text-primary mb-3">
               {flowLayers.find(l => l.id === selectedLayer)?.label}

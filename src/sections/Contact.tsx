@@ -13,8 +13,8 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Have a backend problem worth solving?</h2>
-          <p className="text-2xl text-text-secondary">Let's build something scalable.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Let's connect</h2>
+          <p className="text-2xl text-text-secondary">Have a backend problem worth solving?</p>
         </motion.div>
 
         <motion.div
@@ -24,15 +24,15 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-6 mb-16"
         >
-          <Button variant="primary" size="lg" href="mailto:yogeshmehra.mehra1@gmail.com">
+          <Button variant="primary" size="lg" href="mailto:yogeshmehra.mehra1@gmail.com" className="magnetic-button">
             <Mail className="w-5 h-5 mr-2" />
             Email Me
           </Button>
-          <Button variant="secondary" size="lg" href="https://github.com/YogeshMehra1/" external>
+          <Button variant="secondary" size="lg" href="https://github.com/YogeshMehra1/" external className="magnetic-button">
             <Github className="w-5 h-5 mr-2" />
             GitHub
           </Button>
-          <Button variant="outline" size="lg" href="https://www.linkedin.com/in/yogesh-mehra-dev/" external>
+          <Button variant="outline" size="lg" href="https://www.linkedin.com/in/yogesh-mehra-dev/" external className="magnetic-button">
             <Linkedin className="w-5 h-5 mr-2" />
             LinkedIn
           </Button>
@@ -43,7 +43,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-2xl mx-auto bg-background border border-surface2 rounded-2xl p-8"
+          className="max-w-2xl mx-auto glass rounded-2xl p-8"
         >
           <div className="space-y-6">
             <div className="flex items-center gap-4">
@@ -55,7 +55,7 @@ const Contact = () => {
                 <p className="font-medium">Haldwani, Uttarakhand, India</p>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-4">
               <div className="p-3 bg-secondary/10 rounded-lg text-secondary">
                 <Clock className="w-6 h-6" />
@@ -65,7 +65,7 @@ const Contact = () => {
                 <p className="font-medium text-primary">Java Full Stack Development</p>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-4">
               <div className="p-3 bg-accent/10 rounded-lg text-accent">
                 <Phone className="w-6 h-6" />
@@ -85,7 +85,7 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <Button variant="primary" size="lg" href="/resume.pdf" download downloadName="Yogesh_Mehra_Resume.pdf">
+          <Button variant="primary" size="lg" href="/resume.pdf" download downloadName="Yogesh_Mehra_Resume.pdf" className="magnetic-button">
             Download Resume
           </Button>
         </motion.div>

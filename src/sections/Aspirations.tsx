@@ -44,24 +44,24 @@ const Aspirations = () => {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
       <div className="container mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-center"
+          className="text-center mb-16"
         >
-          Capabilities & Continuous Learning
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-text-secondary text-center mb-16 max-w-2xl mx-auto"
-        >
-          Practical engineering strengths, tools, and areas of ongoing growth
-        </motion.p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Capabilities & Continuous Learning</h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-text-secondary max-w-2xl mx-auto"
+          >
+            Practical engineering strengths, tools, and areas of ongoing growth
+          </motion.p>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {aspirations.map((item, i) => (
@@ -71,7 +71,7 @@ const Aspirations = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-background border border-surface2 rounded-xl p-6 hover:border-primary/30 transition-colors"
+              className="glass rounded-xl p-6 card-hover"
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-primary/10 rounded-lg text-primary">
@@ -98,9 +98,9 @@ const Aspirations = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-16 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border border-surface2 rounded-xl p-8 text-center"
+          className="mt-16 glass rounded-xl p-8 text-center"
         >
-          <h3 className="text-2xl font-bold mb-4">Building with a learning mindset</h3>
+          <h3 className="text-2xl font-bold mb-4 gradient-text">Building with a learning mindset</h3>
           <p className="text-text-secondary max-w-2xl mx-auto">
             I combine Java, Spring Boot, React.js, and cloud-native tooling with AI-assisted development
             to build reliable, scalable systems that solve real-world problems.

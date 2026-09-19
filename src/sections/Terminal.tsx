@@ -32,8 +32,8 @@ const Terminal = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-surface border border-surface2 rounded-xl overflow-hidden">
-            <div className="bg-surface2 px-4 py-2 flex items-center gap-2">
+          <div className="glass rounded-xl overflow-hidden card-hover">
+            <div className="bg-surface2 px-4 py-2 flex items-center gap-2 border-b border-surface3">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div className="w-3 h-3 rounded-full bg-green-500"></div>

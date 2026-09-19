@@ -22,20 +22,23 @@ const Experience = () => {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
       <div className="container mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-16 text-center"
+          className="text-center mb-16"
         >
-          Experience Timeline
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Experience Timeline</h2>
+          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+            Professional journey building scalable systems
+          </p>
+        </motion.div>
 
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
-            
+
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.year}
@@ -50,23 +53,23 @@ const Experience = () => {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.2 + 0.2 }}
-                  className="absolute left-6 w-5 h-5 bg-primary rounded-full border-4 border-background"
+                  className="absolute left-6 w-5 h-5 bg-primary rounded-full border-4 border-background shadow-lg shadow-primary/50"
                 ></motion.div>
-                
-                <div className="bg-background border border-surface2 rounded-xl p-6 hover:border-primary/30 transition-colors">
-                  <div className="flex items-center gap-3 mb-2">
+
+                <div className="glass rounded-xl p-6 card-hover">
+                  <div className="flex items-center gap-3 mb-3">
                     <Calendar className="w-5 h-5 text-primary" />
-                    <span className="text-2xl font-bold text-primary">{exp.year}</span>
+                    <span className="text-2xl font-bold gradient-text">{exp.year}</span>
                   </div>
-                  
+
                   <div className="flex items-center gap-3 mb-2">
                     <Briefcase className="w-5 h-5 text-secondary" />
                     <h3 className="text-xl font-bold">{exp.title}</h3>
                   </div>
-                  
+
                   <p className="text-text-secondary mb-1">{exp.company}</p>
-                  {exp.period && <p className="text-sm text-text-secondary mb-3">{exp.period}</p>}
-                  <p className="text-text-secondary">{exp.description}</p>
+                  {exp.period && <p className="text-sm text-text-muted mb-3">{exp.period}</p>}
+                  <p className="text-text-secondary leading-relaxed">{exp.description}</p>
                 </div>
               </motion.div>
             ))}

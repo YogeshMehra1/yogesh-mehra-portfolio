@@ -63,24 +63,24 @@ const Architecture = () => {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-background">
       <div className="container mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-center"
+          className="text-center mb-16"
         >
-          How I think about backend systems
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-text-secondary text-center mb-16 max-w-2xl mx-auto"
-        >
-          Click on a concept to see how it applies to the architecture
-        </motion.p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">How I think about backend systems</h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-text-secondary max-w-2xl mx-auto"
+          >
+            Click on a concept to see how it applies to the architecture
+          </motion.p>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
@@ -92,10 +92,10 @@ const Architecture = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className={`w-full max-w-md p-4 rounded-xl border transition-all ${
+                  className={`w-full max-w-md p-4 rounded-xl border transition-all card-hover ${
                     selectedConcept && explanations[selectedConcept as keyof typeof explanations]?.components.includes(comp.id)
-                      ? 'bg-primary/20 border-primary'
-                      : 'bg-surface border-surface2'
+                      ? 'glass border-primary/50'
+                      : 'glass hover:border-primary/30'
                   }`}
                 >
                   <div className="flex items-center gap-4">
@@ -116,10 +116,10 @@ const Architecture = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 onClick={() => setSelectedConcept(selectedConcept === key ? null : key)}
-                className={`p-6 rounded-xl border cursor-pointer transition-all ${
+                className={`p-6 rounded-xl border cursor-pointer transition-all card-hover ${
                   selectedConcept === key
-                    ? 'bg-primary/10 border-primary'
-                    : 'bg-surface border-surface2 hover:border-primary/30'
+                    ? 'glass border-primary/50'
+                    : 'glass hover:border-primary/30'
                 }`}
               >
                 <div className="flex items-center gap-4 mb-3">

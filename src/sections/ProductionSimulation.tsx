@@ -5,33 +5,24 @@ const ProductionSimulation = () => {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-surface via-background to-surface">
       <div className="container mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-center"
+          className="text-center mb-16"
         >
-          Production Simulation
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-text-secondary text-center mb-4 max-w-2xl mx-auto"
-        >
-          Visual simulation of request flow through the architecture
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-sm text-text-secondary text-center mb-16 max-w-2xl mx-auto"
-        >
-          * This is a visual simulation for demonstration purposes
-        </motion.p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Production Simulation</h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-text-secondary max-w-2xl mx-auto"
+          >
+            Visual simulation of request flow through the architecture
+          </motion.p>
+        </motion.div>
 
         <div className="flex flex-col items-center gap-4 mb-16">
           {[
@@ -48,7 +39,7 @@ const ProductionSimulation = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.2 }}
-                className={`flex-1 p-4 rounded-xl border text-center font-semibold ${stage.color}`}
+                className={`flex-1 p-4 rounded-xl border text-center font-semibold card-hover ${stage.color}`}
               >
                 {stage.label}
               </motion.div>
@@ -62,9 +53,9 @@ const ProductionSimulation = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 1.5 }}
-          className="max-w-4xl mx-auto bg-background border border-surface2 rounded-xl p-8"
+          className="max-w-4xl mx-auto glass rounded-xl p-8"
         >
-          <h3 className="text-2xl font-bold mb-6 text-center text-primary">Actual Production Achievements</h3>
+          <h3 className="text-2xl font-bold mb-6 text-center gradient-text">Actual Production Achievements</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { label: 'Concurrent Users', value: '20,000+', icon: Activity },
@@ -78,10 +69,10 @@ const ProductionSimulation = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 1.6 + i * 0.1 }}
-                className="text-center p-4 bg-surface border border-surface2 rounded-lg"
+                className="text-center p-4 glass rounded-lg card-hover"
               >
                 <metric.icon className="w-8 h-8 mx-auto mb-2 text-primary" />
-                <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
+                <div className="text-2xl font-bold gradient-text mb-1">{metric.value}</div>
                 <div className="text-sm text-text-secondary">{metric.label}</div>
               </motion.div>
             ))}

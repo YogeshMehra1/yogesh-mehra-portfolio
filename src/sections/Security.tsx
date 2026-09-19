@@ -44,24 +44,24 @@ const Security = () => {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-background">
       <div className="container mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-center"
+          className="text-center mb-16"
         >
-          Security Architecture
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-text-secondary text-center mb-16 max-w-2xl mx-auto"
-        >
-          End-to-end authentication and authorization flow
-        </motion.p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Security Architecture</h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-text-secondary max-w-2xl mx-auto"
+          >
+            End-to-end authentication and authorization flow
+          </motion.p>
+        </motion.div>
 
         <div className="mb-16">
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -72,7 +72,7 @@ const Security = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex items-center gap-3 p-4 bg-surface border border-surface2 rounded-xl hover:border-primary/30 transition-colors"
+                  className="flex items-center gap-3 p-4 glass rounded-xl card-hover"
                 >
                   <step.icon className="w-6 h-6 text-primary" />
                   <span className="font-medium">{step.label}</span>
@@ -93,7 +93,7 @@ const Security = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-surface border border-surface2 rounded-xl p-6 hover:border-primary/30 transition-colors"
+              className="glass rounded-xl p-6 card-hover"
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-primary/10 rounded-lg text-primary">
