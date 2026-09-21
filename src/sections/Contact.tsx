@@ -1,39 +1,39 @@
 import { motion } from 'framer-motion'
-import { Mail, Github, Linkedin, MapPin, Clock, Phone } from 'lucide-react'
+import { Mail, Github, Linkedin, MapPin, Clock, Phone, ArrowRight } from 'lucide-react'
 import Button from '../components/Button'
 
 const Contact = () => {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-surface via-background to-surface">
-      <div className="container mx-auto">
+    <section className="py-20 md:py-32 px-4 md:px-12 lg:px-24 bg-gradient-to-br from-surface via-background to-surface relative overflow-hidden">
+      <div className="container mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Let's connect</h2>
-          <p className="text-2xl text-text-secondary">Have a backend problem worth solving?</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text">Let's connect</h2>
+          <p className="text-2xl md:text-3xl text-text-secondary max-w-3xl mx-auto leading-relaxed">Have a backend problem worth solving?</p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-wrap justify-center gap-6 mb-16"
         >
-          <Button variant="primary" size="lg" href="mailto:yogeshmehra.mehra1@gmail.com" className="magnetic-button">
-            <Mail className="w-5 h-5 mr-2" />
+          <Button variant="primary" size="lg" href="mailto:yogeshmehra.mehra1@gmail.com" className="group">
+            <Mail className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
             Email Me
           </Button>
-          <Button variant="secondary" size="lg" href="https://github.com/YogeshMehra1/" external className="magnetic-button">
-            <Github className="w-5 h-5 mr-2" />
+          <Button variant="secondary" size="lg" href="https://github.com/YogeshMehra1/" external className="group">
+            <Github className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
             GitHub
           </Button>
-          <Button variant="outline" size="lg" href="https://www.linkedin.com/in/yogesh-mehra-dev/" external className="magnetic-button">
-            <Linkedin className="w-5 h-5 mr-2" />
+          <Button variant="outline" size="lg" href="https://www.linkedin.com/in/yogesh-mehra-dev/" external className="group">
+            <Linkedin className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
             LinkedIn
           </Button>
         </motion.div>

@@ -14,18 +14,18 @@ interface ButtonProps {
 }
 
 const Button = ({ children, onClick, variant = 'primary', size = 'md', className = '', href, external = false, download = false, downloadName }: ButtonProps) => {
-  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 rounded-xl'
+  const baseStyles = 'inline-flex items-center justify-center font-semibold transition-all duration-500 rounded-xl relative overflow-hidden'
   
   const variants = {
-    primary: 'bg-gradient-to-r from-primary to-primary-dark text-white hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] hover:scale-105',
-    secondary: 'glass text-primary-light hover:border-primary/50 hover:text-primary hover:scale-105',
-    outline: 'border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary hover:scale-105'
+    primary: 'bg-gradient-to-r from-primary via-primary-light to-primary text-white hover:shadow-[0_0_50px_rgba(139,92,246,0.5)] hover:scale-105',
+    secondary: 'glass-strong text-primary hover:border-primary/50 hover:text-primary hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:scale-105',
+    outline: 'border-2 border-primary/30 text-primary hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] hover:scale-105'
   }
   
   const sizes = {
-    sm: 'px-5 py-2.5 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+    sm: 'px-6 py-3 text-sm',
+    md: 'px-8 py-4 text-base',
+    lg: 'px-10 py-5 text-lg'
   }
 
   const buttonContent = (

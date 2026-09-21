@@ -116,17 +116,20 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-8 md:space-y-12">
+        <div className="space-y-12 md:space-y-16">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 60, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="glass rounded-2xl p-6 md:p-8 card-hover"
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="glass-strong rounded-3xl p-8 md:p-10 card-hover relative overflow-hidden"
             >
-              <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 hover:opacity-100 transition-opacity"
+              />
+              <div className="relative z-10 flex flex-col lg:flex-row gap-8 lg:gap-12">
                 {/* Left side - Icon and main info */}
                 <div className="lg:w-1/3">
                   <motion.div

@@ -48,22 +48,22 @@ const TechStack = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
-      <div className="container mx-auto">
+    <section className="py-20 md:py-32 px-4 md:px-12 lg:px-24 bg-surface relative overflow-hidden">
+      <div className="container mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 gradient-text">Technology Ecosystem</h2>
-          <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text">Technology Ecosystem</h2>
+          <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
             Core technologies I use to build scalable, production-ready systems
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {Object.entries(techCategories).map(([category, techs], categoryIndex) => (
             <motion.div
               key={category}
@@ -73,7 +73,7 @@ const TechStack = () => {
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               onMouseEnter={() => setActiveCategory(category)}
               onMouseLeave={() => setActiveCategory(null)}
-              className={`glass rounded-2xl p-4 md:p-6 card-hover cursor-pointer ${
+              className={`glass-strong rounded-2xl p-6 md:p-8 card-hover cursor-pointer relative overflow-hidden ${
                 activeCategory === category ? 'border-primary/50' : ''
               }`}
             >
