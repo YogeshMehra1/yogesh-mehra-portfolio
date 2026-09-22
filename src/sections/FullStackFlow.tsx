@@ -4,13 +4,13 @@ import { ArrowDown } from 'lucide-react'
 
 const flowLayers = [
   { id: 'react', label: 'React.js', description: 'Modern component-based UI library for building interactive user interfaces with reusable components and virtual DOM for optimal performance.' },
-  { id: 'typescript', label: 'TypeScript', description: 'Typed superset of JavaScript that adds static type checking, enabling safer code and better developer experience with IDE support.' },
+  { id: 'angular', label: 'Angular', description: 'Frontend framework used to build structured web modules integrated with backend REST APIs.' },
   { id: 'rest', label: 'REST API', description: 'Representational State Transfer API architecture for communication between frontend and backend using HTTP methods and JSON data format.' },
   { id: 'spring', label: 'Spring Boot', description: 'Java framework for building production-ready applications with auto-configuration, embedded servers, and comprehensive ecosystem for enterprise development.' },
   { id: 'microservices', label: 'Microservices', description: 'Architectural style that structures applications as small, independent services communicating via APIs, enabling scalable and maintainable systems.' },
   { id: 'kafka', label: 'Kafka', description: 'Distributed event streaming platform for handling real-time data feeds and enabling asynchronous communication between microservices.' },
   { id: 'redis', label: 'Redis', description: 'In-memory data store used for caching, session management, and real-time analytics, providing sub-millisecond response times.' },
-  { id: 'postgres', label: 'PostgreSQL', description: 'Advanced open-source relational database with ACID compliance, complex queries, and support for JSON data types for flexible schema design.' },
+  { id: 'mysql', label: 'MySQL', description: 'Relational database used for application persistence through Spring Data JPA and Hibernate.' },
   { id: 'aws', label: 'AWS', description: 'Cloud computing platform providing scalable infrastructure services including EC2, S3, RDS, and managed services for deploying applications.' },
 ]
 

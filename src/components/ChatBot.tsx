@@ -6,16 +6,17 @@ const portfolioData = {
   name: 'Yogesh Mehra',
   role: 'Java Backend + Full Stack Developer',
   experience: '3.8 years',
-  location: 'Uttarakhand, India',
+  location: 'India',
   email: 'yogeshmehra.mehra1@gmail.com',
   phone: '+91 9675580388',
   github: 'https://github.com/YogeshMehra1',
   linkedin: 'https://linkedin.com',
-  skills: ['Java', 'Spring Boot', 'Kafka', 'Redis', 'PostgreSQL', 'AWS', 'React.js', 'TypeScript', 'Node.js'],
+  skills: ['Java 17', 'Spring Boot', 'Spring Cloud', 'REST APIs', 'Kafka', 'Redis', 'MySQL', 'AWS', 'React.js', 'Angular'],
   projects: [
-    'Revenue & Invoicing Platform (Infosys)',
-    'State Examination Management System (HKCL)',
-    'Citizen Services Portal (Government)'
+    'Healthcare Management Platform (Infosys)',
+    'Online Recruitment System (HKCL)',
+    'Online Transfer System (HKCL)',
+    'Resume Analyzer AI (Personal Project)'
   ],
   companies: ['Haryana Knowledge Corporation Ltd', 'Infosys Limited'],
   education: 'B.Tech in Computer Science',
@@ -37,22 +38,22 @@ const getResponse = (userMessage: string): string => {
 
   // Experience
   if (message.match(/(experience|exp|kitne saal|kitna time|work)/)) {
-    return `I have ${portfolioData.experience} of professional experience:\n\n🏢 **Haryana Knowledge Corporation Ltd** (3+ years)\n• Built examination systems handling 20,000+ concurrent users\n• PostgreSQL performance tuning & JPA optimization\n• 99.5% uptime maintained\n\n🏢 **Infosys Limited** (4 months)\n• Revenue & invoicing platform microservices\n• Kafka async payment notifications\n• Redis caching for 35% faster response times`
+    return `I have ${portfolioData.experience} of professional experience:\n\nHaryana Knowledge Corporation Limited\n• Junior Software Developer, Jul 2022 – Oct 2025\n• Online Recruitment and Online Transfer systems\n• Java/Spring Boot APIs, MySQL, Angular, React.js, AWS\n\nInfosys Limited\n• Associate Consultant, Nov 2025 – Mar 2026\n• Healthcare Management Platform\n• Java 17, Spring Cloud, Kafka, Redis, Docker, AWS, React.js`
   }
 
   // Skills
   if (message.match(/(skill|tech|technology|technology|kya aata hai|technologies)/)) {
-    return `**Backend Skills:**\n• Java 8/17, Spring Boot, Microservices\n• Kafka, Redis, PostgreSQL, JPA/Hibernate\n• AWS, Docker, REST APIs\n\n**Frontend Skills:**\n• React.js, TypeScript, Node.js\n• Express.js, Modern UI frameworks\n\n**Testing & Tools:**\n• JUnit 5, Mockito, Postman\n• Git, Docker, CI/CD\n\nI specialize in building scalable distributed systems with event-driven architecture.`
+    return `**Backend Skills:**\n• Java 17, Spring Boot, Spring Cloud, Microservices\n• Kafka, Redis, MySQL, JPA/Hibernate\n• AWS, Docker, REST APIs\n\n**Frontend Skills:**\n• React.js, Angular, HTML5, CSS3\n\n**Testing & Tools:**\n• JUnit, Mockito, Postman, Swagger/OpenAPI\n• Git, GitHub Actions, CI/CD\n\nI build validated, secure, and maintainable full-stack applications.`
   }
 
   // Projects
   if (message.match(/(project|work|kya kaam|kya banaya|portfolio)/)) {
-    return `**Key Projects:**\n\n1️⃣ **Revenue & Invoicing Platform** (Infosys)\n• Java 17 + Spring Boot microservices\n• Kafka async notifications (30% latency reduction)\n• Redis caching (35% faster response)\n• Docker deployment\n\n2️⃣ **State Examination System** (HKCL)\n• 20,000+ concurrent users\n• PostgreSQL performance tuning\n• 40% query-time reduction\n• React.js frontend\n\n3️⃣ **Citizen Services Portal** (Government)\n• 15,000+ applications processed\n• JWT-based RBAC security\n• AWS S3 document storage\n• Swagger API documentation`
+    return `**Key Projects:**\n\n1️⃣ **Healthcare Management Platform** (Infosys)\n• Patient, provider, and appointment workflows\n• Spring Cloud service communication and Resilience4j\n• Kafka notifications and Redis caching\n\n2️⃣ **Online Recruitment System** (HKCL)\n• Candidate registration, applications, admit cards\n• Payment gateway, OTP, AWS SNS notifications\n• PDF/Excel generation and AWS S3/EC2\n\n3️⃣ **Online Transfer System** (HKCL)\n• Secure document-verification workflows\n• JWT authentication and role-based authorization\n• React.js, Swagger/OpenAPI, and Postman\n\n4️⃣ **Resume Analyzer AI** (Personal)\n• Apache Tika, Spring AI, and Google Gemini\n• ATS score and improvement suggestions`
   }
 
   // Companies
   if (message.match(/(company|organization|kahan kaam kiya|where|job)/)) {
-    return `**Professional Journey:**\n\n📅 **Haryana Knowledge Corporation Ltd**\n• Role: Junior Software Developer\n• Period: 11 Jul 2022 – 31 Oct 2025\n• Focus: Examination management systems\n\n📅 **Infosys Limited**\n• Role: Associate Consultant\n• Period: 3 Nov 2025 – 13 Mar 2026\n• Focus: Enterprise revenue platforms\n\n📅 **Current Status**\n• Immediate Joiner - Ready for new opportunities!`
+    return `**Professional Journey:**\n\nHaryana Knowledge Corporation Limited\n• Role: Junior Software Developer\n• Period: Jul 2022 – Oct 2025\n• Focus: Online Recruitment and Online Transfer systems\n\nInfosys Limited\n• Role: Associate Consultant\n• Period: Nov 2025 – Mar 2026\n• Focus: Healthcare Management Platform\n\nCurrent Status\n• Immediate Joiner - Ready for new opportunities!`
   }
 
   // Contact
@@ -92,7 +93,7 @@ const getResponse = (userMessage: string): string => {
 
   // Why hire
   if (message.match(/(why hire|why select|kyun hire|benefit)/)) {
-    return `**Why hire me?**\n\n✅ **3.8 years** of hands-on production experience\n✅ Built systems handling **20,000+ concurrent users**\n✅ **30-40% performance improvements** in projects\n✅ **Full stack** capability (Java + React)\n✅ **Immediate joiner** - no notice period\n✅ Strong problem-solving & system design skills\n\nI bring both technical expertise and practical experience to deliver results from Day 1!`
+    return `**Why hire me?**\n\n✅ **3.8 years** of hands-on experience\n✅ Java 17, Spring Boot, and microservices expertise\n✅ Healthcare, recruitment, and document-verification workflows\n✅ Full-stack capability with React.js and Angular\n✅ Immediate joiner\n✅ Strong testing, API documentation, and debugging practice`
   }
 
   // Career goals
@@ -102,7 +103,7 @@ const getResponse = (userMessage: string): string => {
 
   // Strengths
   if (message.match(/(strength|strong point|quality|best)/)) {
-    return `**My Strengths:**\n\n💪 **Backend Architecture** - Scalable microservices\n💪 **Performance Optimization** - 30-40% improvements\n💪 **Problem Solving** - Production RCA & debugging\n💪 **Full Stack** - Java to React end-to-end\n💪 **Quick Learner** - Always exploring new tech\n💪 **Team Player** - Collaborative approach`
+    return `**My Strengths:**\n\nBackend architecture - Spring Boot microservices\nAPI development - validation, business logic, and exception handling\nSecurity - Spring Security, JWT, and role-based authorization\nFull stack - Java APIs with React.js and Angular\nQuality - JUnit, Mockito, Swagger, and Postman`
   }
 
   // Default response

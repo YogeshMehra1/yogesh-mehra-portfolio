@@ -8,7 +8,8 @@ const architectureComponents = [
   { id: 'microservices', label: 'Spring Boot Microservices', icon: Database },
   { id: 'kafka', label: 'Kafka Event Bus', icon: Activity },
   { id: 'redis', label: 'Redis Cache', icon: Database },
-  { id: 'postgres', label: 'PostgreSQL', icon: Database },
+  { id: 'mysql', label: 'MySQL', icon: Database },
+  { id: 'eureka', label: 'Eureka Service Discovery', icon: Globe },
   { id: 'aws', label: 'AWS', icon: Cloud },
 ]
 
@@ -23,18 +24,18 @@ const explanations = {
     title: 'Reliability',
     icon: Shield,
     description: 'Event-driven architecture with Kafka ensures message delivery and system resilience.',
-    components: ['kafka', 'microservices', 'postgres'],
+    components: ['kafka', 'microservices', 'mysql'],
   },
   caching: {
     title: 'Caching',
     icon: Database,
-    description: 'Redis caching layer reduces database load and improves response times by ~35%.',
+    description: 'Redis provides a caching layer for frequently accessed data in backend workflows.',
     components: ['redis', 'microservices'],
   },
   async: {
     title: 'Asynchronous Processing',
     icon: Activity,
-    description: 'Kafka enables asynchronous event processing, reducing downstream latency by ~30%.',
+    description: 'Kafka enables asynchronous notification events and decoupled processing.',
     components: ['kafka', 'microservices'],
   },
   security: {
@@ -47,7 +48,7 @@ const explanations = {
     title: 'Observability',
     icon: Eye,
     description: 'Comprehensive monitoring and logging for production support and RCA.',
-    components: ['microservices', 'kafka', 'postgres'],
+    components: ['microservices', 'kafka', 'mysql'],
   },
   testing: {
     title: 'Testing',

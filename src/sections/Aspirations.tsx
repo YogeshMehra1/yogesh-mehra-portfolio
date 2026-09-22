@@ -5,7 +5,7 @@ const aspirations = [
   {
     icon: <Brain className="w-6 h-6" />,
     title: 'AI-Assisted Development',
-    description: 'Using GitHub Copilot, Cursor IDE, ChatGPT/Claude, OpenAI APIs, and LLMs to improve development workflows and build AI features.',
+    description: 'Using GitHub Copilot, Cursor AI, ChatGPT, and Spring AI to improve development workflows and build practical AI features.',
     status: 'Applied',
   },
   {
@@ -23,19 +23,19 @@ const aspirations = [
   {
     icon: <Target className="w-6 h-6" />,
     title: 'Cloud & Delivery',
-    description: 'Working with AWS S3 and EC2, Docker, GitHub Actions, Maven, and production deployment practices.',
+    description: 'Working with AWS S3, AWS EC2, Docker, Git, GitHub Actions, and CI/CD practices.',
     status: 'Applied',
   },
   {
     icon: <Code className="w-6 h-6" />,
     title: 'Full Stack Delivery',
-    description: 'Delivering React.js interfaces alongside Java backend APIs for examination and revenue workflows.',
+    description: 'Delivering React.js and Angular interfaces alongside Java backend APIs for healthcare, recruitment, and transfer workflows.',
     status: 'Applied',
   },
   {
     icon: <Sparkles className="w-6 h-6" />,
-    title: 'Observability',
-    description: 'Designing with Grafana, Prometheus, Loki, and production support practices in mind.',
+    title: 'Quality & Documentation',
+    description: 'Writing JUnit and Mockito tests, documenting APIs with Swagger/OpenAPI, and investigating defects with Postman.',
     status: 'Applied',
   },
 ]

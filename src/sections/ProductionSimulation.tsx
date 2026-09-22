@@ -26,10 +26,10 @@ const ProductionSimulation = () => {
 
         <div className="flex flex-col items-center gap-4 mb-16">
           {[
-            { label: '1,000 Requests', color: 'bg-primary/20 border-primary text-primary' },
+            { label: 'Client Request', color: 'bg-primary/20 border-primary text-primary' },
             { label: 'API Gateway', color: 'bg-secondary/20 border-secondary text-secondary' },
             { label: 'Spring Boot', color: 'bg-accent/20 border-accent text-accent' },
-            { label: 'Redis Cache', color: 'bg-purple-500/20 border-purple-500 text-purple-500' },
+            { label: 'MySQL + JPA', color: 'bg-purple-500/20 border-purple-500 text-purple-500' },
             { label: 'Kafka', color: 'bg-orange-500/20 border-orange-500 text-orange-500' },
             { label: 'Database', color: 'bg-blue-500/20 border-blue-500 text-blue-500' },
           ].map((stage, i) => (
@@ -58,10 +58,10 @@ const ProductionSimulation = () => {
           <h3 className="text-2xl font-bold mb-6 text-center gradient-text">Actual Production Achievements</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: 'Concurrent Users', value: '20,000+', icon: Activity },
-              { label: 'API Response Improvement', value: '~35%', icon: Activity },
-              { label: 'Query Performance Improvement', value: '~40%', icon: Activity },
-              { label: 'Production Uptime', value: '99.5%', icon: Activity },
+              { label: 'Validation', value: 'REST', icon: Activity },
+              { label: 'Persistence', value: 'JPA', icon: Activity },
+              { label: 'Async Events', value: 'Kafka', icon: Activity },
+              { label: 'Deployment', value: 'AWS', icon: Activity },
             ].map((metric, i) => (
               <motion.div
                 key={i}

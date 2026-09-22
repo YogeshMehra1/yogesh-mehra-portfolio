@@ -7,7 +7,7 @@ const commands = [
   { cmd: '$ primary-stack', output: 'Java • Spring Boot • Microservices' },
   { cmd: '$ messaging', output: 'Apache Kafka' },
   { cmd: '$ caching', output: 'Redis' },
-  { cmd: '$ frontend', output: 'React.js • TypeScript' },
+  { cmd: '$ frontend', output: 'React.js • Angular' },
   { cmd: '$ cloud', output: 'AWS • Docker' },
   { cmd: '$ status', output: 'AVAILABLE FOR NEW OPPORTUNITIES' },
 ]

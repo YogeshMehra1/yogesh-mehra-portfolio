@@ -16,22 +16,23 @@ const iconMap: Record<string, any> = {
 
 const codeExamples = {
   'cursor': `// Cursor IDE - AI-powered completion
-const calculateInvoice = (items: Item[]) => {
-  // Cursor suggests: Reduce function for total
-  return items.reduce((total, item) =>
-    total + (item.price * item.quantity), 0
-  );
+const validateAppointment = (appointment: Appointment) => {
+  // Cursor suggests: Validate required healthcare workflow fields
+  if (!appointment.patientId || !appointment.providerId) {
+    throw new InvalidRequestException('Patient and provider are required');
+  }
+  return appointment;
 }`,
   'github-copilot': `// GitHub Copilot - Real-time suggestions
-@PostMapping("/api/invoices")
-public ResponseEntity<Invoice> createInvoice(
-    @RequestBody InvoiceRequest request) {
-    // Copilot suggests: Validation logic
-    if (request.getItems().isEmpty()) {
+@PostMapping("/api/appointments")
+public ResponseEntity<Appointment> createAppointment(
+  @RequestBody AppointmentRequest request) {
+  // Copilot suggests: Validation logic
+  if (request.getPatientId() == null) {
         throw new InvalidRequestException();
     }
     return ResponseEntity.ok(
-        invoiceService.create(request)
+        appointmentService.create(request)
     );
 }`,
   'chatgpt': `// ChatGPT - Code explanation
@@ -40,18 +41,18 @@ public ResponseEntity<Invoice> createInvoice(
 // component in Spring's business layer..."
 
 @Service
-public class InvoiceService {
-    public Invoice create(InvoiceRequest request) {
+public class AppointmentService {
+  public Appointment create(AppointmentRequest request) {
         // Business logic here
     }
 }`,
   'claude': `// Claude - Complex reasoning
 // Claude: "This microservice pattern can be optimized
-// by adding Redis caching layer..."
+// by adding a Redis caching layer..."
 
-@Cacheable(value = "invoices", key = "#id")
-public Invoice getInvoiceById(Long id) {
-    return invoiceRepository.findById(id)
+@Cacheable(value = "appointments", key = "#id")
+public Appointment getAppointmentById(Long id) {
+  return appointmentRepository.findById(id)
         .orElseThrow();
 }`
 }

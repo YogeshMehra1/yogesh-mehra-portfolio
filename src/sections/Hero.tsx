@@ -30,7 +30,7 @@ const Hero = () => {
               className="mb-6"
             >
               <span className="inline-block px-4 py-2 glass rounded-full text-sm font-mono text-primary-light tracking-wider">
-                JAVA FULL STACK ENGINEER
+                JAVA FULL STACK DEVELOPER
               </span>
             </motion.div>
 
@@ -64,7 +64,7 @@ const Hero = () => {
               transition={{ delay: 0.8 }}
               className="text-base md:text-lg text-text-secondary mb-8 md:mb-10 max-w-xl leading-relaxed"
             >
-              Results-driven developer with 3.8 years of experience delivering high-performance Java and Spring Boot systems, event-driven microservices, and React.js interfaces.
+              Java Full Stack Developer with 3.8 years of experience building backend services and web applications with Java 17, Spring Boot, REST APIs, microservices, and React.js.
             </motion.p>
 
             <motion.div
@@ -73,7 +73,7 @@ const Hero = () => {
               transition={{ delay: 1 }}
               className="flex flex-wrap gap-3 mb-10"
             >
-              {['Java 17', 'Spring Boot', 'Microservices', 'Kafka', 'Redis', 'AWS', 'Docker', 'Kubernetes', 'React.js', 'GenAI'].map((tech, i) => (
+              {['Java 17', 'Spring Boot', 'Microservices', 'REST APIs', 'Kafka', 'Redis', 'AWS', 'Docker', 'React.js', 'Angular'].map((tech, i) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0.9 }}

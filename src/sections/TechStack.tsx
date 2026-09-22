@@ -6,12 +6,14 @@ const techCategories = {
   '01 — BACKEND': [
     'Java 17',
     'Spring Boot',
+    'Spring MVC',
+    'Spring Data JPA',
+    'Hibernate',
     'Spring Security',
     'Microservices',
     'REST APIs',
   ],
   '02 — DATA & CACHING': [
-    'PostgreSQL',
     'MySQL',
     'Redis',
   ],
@@ -21,16 +23,19 @@ const techCategories = {
   '04 — CLOUD & DEVOPS': [
     'AWS',
     'Docker',
-    'Kubernetes',
     'Git',
     'CI/CD',
   ],
   '05 — FRONTEND': [
     'React.js',
-    'TypeScript',
+    'Angular',
+    'HTML5 / CSS3',
   ],
   '06 — AI & PRODUCTIVITY': [
-    'GenAI',
+    'GitHub Copilot',
+    'Cursor AI',
+    'ChatGPT',
+    'Spring AI',
   ],
 }
 

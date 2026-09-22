@@ -6,10 +6,10 @@ const skills = [
   { name: 'Spring Boot', level: 85 },
   { name: 'Kafka', level: 75 },
   { name: 'Redis', level: 80 },
-  { name: 'PostgreSQL', level: 85 },
+  { name: 'MySQL', level: 85 },
   { name: 'AWS', level: 70 },
   { name: 'React.js', level: 75 },
-  { name: 'TypeScript', level: 70 },
+  { name: 'Angular', level: 75 },
 ]
 
 const SkillBars = () => {

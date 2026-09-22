@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Activity, Database as DbIcon, Users, Clock, CheckCircle, AlertTriangle } from 'lucide-react'
+import { Activity, Database as DbIcon, Briefcase, Clock, CheckCircle, AlertTriangle } from 'lucide-react'
 import useCounter from '../hooks/useCounter'
 
 const MetricCard = ({ icon: Icon, label, value, suffix, color }: { icon: any; label: string; value: number; suffix?: string; color: string }) => {
@@ -31,15 +31,15 @@ const Production = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Inside Production</h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            Real metrics from production systems
+            Technologies and workflows used in professional delivery
           </p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          <MetricCard icon={Activity} label="API Response Time" value={35} suffix="%" color="bg-primary/20 text-primary" />
-          <MetricCard icon={DbIcon} label="Query Performance" value={40} suffix="%" color="bg-secondary/20 text-secondary" />
-          <MetricCard icon={Users} label="Concurrent Users" value={20000} suffix="+" color="bg-accent/20 text-accent" />
-          <MetricCard icon={Clock} label="Uptime" value={99.5} suffix="%" color="bg-green-500/20 text-green-500" />
+          <MetricCard icon={Activity} label="Experience" value={3.8} suffix=" yrs" color="bg-primary/20 text-primary" />
+          <MetricCard icon={DbIcon} label="Backend Stack" value={17} suffix="" color="bg-secondary/20 text-secondary" />
+          <MetricCard icon={Briefcase} label="Professional Projects" value={2} suffix="" color="bg-accent/20 text-accent" />
+          <MetricCard icon={Clock} label="Availability" value={1} suffix="" color="bg-green-500/20 text-green-500" />
         </div>
 
         <motion.div
@@ -49,15 +49,15 @@ const Production = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="glass rounded-2xl p-8"
         >
-          <h3 className="text-2xl font-bold mb-8 text-center gradient-text">Incident Response Simulation</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center gradient-text">Backend Delivery Flow</h3>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             {[
-              { icon: AlertTriangle, label: 'Request Spike Detected', color: 'bg-red-500/20 text-red-500' },
-              { icon: DbIcon, label: 'Redis Cache', color: 'bg-purple-500/20 text-purple-500' },
-              { icon: CheckCircle, label: 'Reduced DB Load', color: 'bg-blue-500/20 text-blue-500' },
-              { icon: Activity, label: 'Kafka Async Processing', color: 'bg-orange-500/20 text-orange-500' },
-              { icon: CheckCircle, label: 'Stable API', color: 'bg-green-500/20 text-green-500' },
+              { icon: AlertTriangle, label: 'Validate Request', color: 'bg-red-500/20 text-red-500' },
+              { icon: DbIcon, label: 'Apply Business Logic', color: 'bg-purple-500/20 text-purple-500' },
+              { icon: CheckCircle, label: 'Persist with JPA', color: 'bg-blue-500/20 text-blue-500' },
+              { icon: Activity, label: 'Publish Kafka Event', color: 'bg-orange-500/20 text-orange-500' },
+              { icon: CheckCircle, label: 'Return REST Response', color: 'bg-green-500/20 text-green-500' },
             ].map((step, i) => (
               <div key={i} className="flex items-center gap-4">
                 <motion.div

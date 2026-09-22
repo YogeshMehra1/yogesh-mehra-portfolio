@@ -5,17 +5,17 @@ const codeSnippets = [
   {
     language: 'Java',
     code: `@RestController
-@RequestMapping("/api/invoices")
-public class InvoiceController {
+@RequestMapping("/api/appointments")
+public class AppointmentController {
     
     @Autowired
-    private InvoiceService invoiceService;
+    private AppointmentService appointmentService;
     
     @PostMapping("/generate")
-    public ResponseEntity<Invoice> generateInvoice(
-        @RequestBody InvoiceRequest request) {
+    public ResponseEntity<Appointment> createAppointment(
+      @RequestBody AppointmentRequest request) {
         return ResponseEntity.ok(
-            invoiceService.generateInvoice(request)
+            appointmentService.create(request)
         );
     }
 }`,
@@ -25,19 +25,19 @@ public class InvoiceController {
     language: 'React',
     code: `import React, { useState, useEffect } from 'react';
 
-const InvoiceDashboard = () => {
-  const [invoices, setInvoices] = useState([]);
+const AppointmentList = () => {
+  const [appointments, setAppointments] = useState([]);
   
   useEffect(() => {
-    fetch('/api/invoices')
+    fetch('/api/appointments')
       .then(res => res.json())
-      .then(data => setInvoices(data));
+      .then(data => setAppointments(data));
   }, []);
 
   return (
     <div className="dashboard">
-      {invoices.map(inv => (
-        <InvoiceCard key={inv.id} invoice={inv} />
+      {appointments.map(appointment => (
+        <AppointmentCard key={appointment.id} appointment={appointment} />
       ))}
     </div>
   );
@@ -47,17 +47,17 @@ const InvoiceDashboard = () => {
   {
     language: 'Kafka',
     code: `@KafkaListener(
-    topics = "invoice-events",
-    groupId = "invoice-group"
+    topics = "appointment-events",
+    groupId = "notification-group"
 )
-public void handleInvoiceEvent(
-        InvoiceEvent event) {
+public void handleAppointmentEvent(
+  AppointmentEvent event) {
     switch (event.getType()) {
         case "PAYMENT_RECEIVED":
             processPayment(event);
             break;
-        case "INVOICE_GENERATED":
-            notifyCustomer(event);
+        case "APPOINTMENT_CREATED":
+          publishNotification(event);
             break;
     }
 }`,
