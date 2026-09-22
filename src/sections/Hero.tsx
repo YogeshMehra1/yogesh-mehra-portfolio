@@ -96,7 +96,7 @@ const Hero = () => {
                 View Projects
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button variant="secondary" size="lg" href="/resume.pdf" download downloadName="Yogesh_Mehra_Resume.pdf" className="magnetic-button">
+              <Button variant="secondary" size="lg" href="/resume.pdf" download downloadName="yogesh_Mehra_Resume.pdf" className="magnetic-button">
                 Download Resume
               </Button>
             </motion.div>
